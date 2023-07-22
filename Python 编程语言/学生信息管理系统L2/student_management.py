@@ -13,8 +13,6 @@ class StudentManagement:
         for stu in self.students:
             if stu.id == stu_id:
                 return stu
-            else:
-                return False
 
     def add_student(self, student: Student):
         # 判断是否存在
