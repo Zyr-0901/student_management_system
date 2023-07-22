@@ -4,7 +4,10 @@ from typing import List
 
 class StudentManagement:
     def __init__(self, students: List[Student]):
-        self.students = students
+        if students:
+            self.students = students
+        else:
+            self.students = []
 
     def get_student(self, stu_id: int):
         for stu in self.students:
@@ -32,12 +35,15 @@ class StudentManagement:
             print(f"该学员{student.name}不存在,请确认")
             return False
 
+    def _get_all_student(self):
+        for stu in self.students:
+            print(stu)
+
     def residue_student(self, stu_id: int):
         print("删除的学员信息:")
         self.delete_student(stu_id)
         print("删除后的学员信息:")
-        for stu in self.students:
-            print(stu)
+        self._get_all_student()
 
 
 if __name__ == '__main__':
