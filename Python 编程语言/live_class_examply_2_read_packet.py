@@ -16,17 +16,17 @@ class Person:
 
 class Manage(Person):
     def send(self, money, num):
+        result = []
         if money > self.money:
             print("余额不足")
         else:
-            result = []
-            value = money // num
-            remainder = money % num
-            for i in range(1, num):
-                result.append(value)
-            result.append(remainder)
             self.money -= money
-            return result
+            avg = money // num
+            mod = money % num
+            for i in range(num):
+                result.append(avg)
+            result[-1] += mod
+        return result
 
     def __repr__(self):
         return f"{self.name},当前剩余金额{self.money}"
@@ -35,12 +35,11 @@ class Manage(Person):
 class Member(Person):
     students = []
 
-    def grab(self, read_package, num):
-        index = random.randint(0, num - 1)
-        money = read_package[index]
+    def grab(self, read_package):
+        index = random.randint(0, len(read_package)-1)
+        money = read_package.pop(index)
         self.money += money
         print(f"{self.name}抢到{money}")
-        return read_package.pop(index)
 
 
 if __name__ == '__main__':
@@ -52,12 +51,14 @@ if __name__ == '__main__':
     manage = Manage("管理员", 20)
     read_packages = manage.send(14, person_num)
     print(manage)
+    if read_packages:
+        member_1.grab(read_packages)
+        print(member_1.show())
 
-    member_1.grab(read_packages, person_num)
-    print(member_1.show())
+        member_2.grab(read_packages)
+        print(member_2.show())
 
-    member_2.grab(read_packages, person_num - 1)
-    print(member_2.show())
-
-    member_3.grab(read_packages, person_num - 2)
-    print(member_3.show())
+        member_3.grab(read_packages)
+        print(member_3.show())
+    else:
+        print("发送不成功,余额不足")
