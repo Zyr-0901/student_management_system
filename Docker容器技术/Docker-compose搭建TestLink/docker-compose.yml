@@ -1,0 +1,22 @@
+version: '2'
+services:
+  mariadb:
+     image: bitnami/mariadb:latest
+     ports:
+         - 8088:3306
+     environment:
+         MARIADB_USER: bn_testlink
+         MARIADB_DATABASE: bitnami_testlink
+         ALLOW_EMPTY_PASSWORD: yes
+     volumes:
+         - /data/testlink/:/var/lib/mysql
+  testlink:
+      image: bitnami/testlink-archived:latest
+      ports:
+         - 5506:8080
+      environment:
+         ALLOW_EMPTY_PASSWORD: yes
+         TESTLINK_DATABASE_USER: bn_testlink
+         MARIADB_DATABASE: bitnami_testlink
+      depends_on:
+         - mariadb
