@@ -64,7 +64,7 @@ sudo dcoker pull bitnami/testlink-archived
 # 启动mariadb
 sudo docker run -d --name mariadb -e ALLOW_EMPTY_PASSWORD=yes \
 -e MARIADB_USER=bn_testlink -e MARIADB_DATABASE=bitnami_testlink \
--v /data/testlink/:/var/lib/mysql \
+-v /datas/testlink/:/var/lib/mysql \
 -p 8088:3306 bitnami/mariadb:latest
 
 # 启动testlink并连接mariadb容器
