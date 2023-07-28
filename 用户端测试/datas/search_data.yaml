@@ -1,0 +1,20 @@
+search:
+  datas:
+    validDatas:
+      - "Selenium"
+      - "Appium"
+      - "面试"
+    validDataIds:
+      - "搜索Selenium"
+      - "搜索Appium"
+      - "搜索面试"
+    invalidDatas:
+      - "@!#$%"
+      - "11111111111111111111111111111111111111"
+      - "  "
+    invalidDataIds:
+      - "特殊字符查询"
+      - "超过限制长度查询"
+      - "空字符串查询"
+
+
