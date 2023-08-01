@@ -9,5 +9,4 @@ class DealYaml:
         real_path = os.path.join(project_dir, path)
         with open(real_path, encoding="utf-8") as f:
             result = yaml.safe_load(f)
-            datas = result.get("add").get("datas")
-            return datas
+            return result

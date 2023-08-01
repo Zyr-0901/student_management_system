@@ -23,7 +23,7 @@ class HeroManagement:
         return False
 
     def create_hero(self, hero_name, hero_volume, hero_power):
-        if hero_volume < 2 or hero_volume > 100:
+        if hero_volume <= 0 or hero_volume >= 100:
             return False
         if hero_power <= 0:
             return False
