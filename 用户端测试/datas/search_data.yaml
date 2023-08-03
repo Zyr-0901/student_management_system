@@ -12,7 +12,6 @@ search:
       - ["  ", "空字符串查询"]
       - ["mianshi", "搜索mianshi,中文拼音转换情况"]
     specialDatas:
-      - ["sel", "搜索时自动补全情况"]
+      - ["seleni", "搜索时自动补全情况"]
       - ["selen", "搜索selenium部分匹配情况"]
       - ["Selenium", "多次搜索selenium,确认检查结果是否稳定"]
-      - ["selenium", "弱网搜索"]

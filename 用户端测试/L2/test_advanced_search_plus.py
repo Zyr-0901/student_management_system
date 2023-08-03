@@ -12,6 +12,7 @@
 import allure
 import pytest
 from selenium import webdriver
+from selenium.webdriver import Keys
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
@@ -114,3 +115,61 @@ class TestAdvancedSearchPlus:
                 until(expected_conditions.visibility_of_element_located((By.XPATH, self.search_result_ele_1)))
             search_results = search_result_object.text
             assert search_results == ''
+
+    @pytest.mark.parametrize('search_text, desc',
+                             OperateYaml.read_yaml('datas/search_data.yaml').get("specialDatas"))
+    def test_search_special(self, search_text, desc):
+        """
+        判断是否可以自动TAB补全
+        判断是否可以模糊匹配
+        判断多次搜索后的结果
+        """
+
+        # 设置标题
+        allure.dynamic.title(desc)
+
+        # 1.查找搜索框 2.清空搜索框内容 3.键入搜索内容
+        search_box = WebDriverWait(self.driver, 5). \
+            until(expected_conditions.element_to_be_clickable((By.XPATH, self.search_box_ele)))
+        search_box.clear()
+        search_box.send_keys(search_text)
+
+        # 搜索时自动补全情况
+        if search_text == "seleni":
+            except_text = "selenium"
+            # 默认手工执行tab操作
+            search_box.send_keys(Keys.TAB)
+            # 获取当前输入框的值
+            actual_text_object = self.driver.find_element(By.XPATH, self.search_box_ele)
+            actual_text = actual_text_object.text
+
+            # 断言 当前文本框的实际值是否等于期待值
+            assert actual_text != except_text
+
+        # 模糊匹配情况
+        if search_text == "selen":
+            # 点击搜索按钮
+            self.driver.find_element(By.XPATH, self.search_button_ele).click()
+
+            # 确认结果返回值
+            search_result_object = WebDriverWait(self.driver, 5). \
+                until(expected_conditions.visibility_of_element_located((By.XPATH, self.search_result_ele)))
+            search_results = search_result_object.text
+
+            # 断言,确认第一条数据标题是否包含搜索词
+            assert search_text.lower() in search_results.lower()
+
+        # 多次点击情况
+        if search_text == "Selenium":
+            result = []
+            for i in range(3):
+                # 点击搜索按钮
+                self.driver.find_element(By.XPATH, self.search_button_ele).click()
+
+                # 获取结果列表
+                pre_search_result_object = self.driver.find_elements(By.XPATH, self.search_result_ele)
+                # 获取结果数量
+                search_result_num = len([element.text for element in pre_search_result_object])
+                result.append(search_result_num)
+            # 断言,通过判断多次点击后的查询数量是否一致
+            assert len(set(result)) == 1
