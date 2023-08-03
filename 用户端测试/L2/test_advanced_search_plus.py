@@ -1,33 +1,25 @@
 # 要求实现搜索功能的Web自动化测试。
 # Selenium 常用操作与用例编写。
-# 使用隐式等待优化代码。
+# 使用显式等待优化代码。
 # 考虑特殊场景的验证。
 # 输入内容过长。
 # 特殊字符。
 # 其他。
 # 使用参数化优化代码。
+# 步骤截图。
 # 提交内容:
 # 代码的git地址或帖子地址。
-# 打开测试人论坛。
-# 跳转到高级搜索页面
-# 搜索输入框输入搜索关键字。关键字清单如下：
-# Selenium
-# Appium
-# 面试
-# 打印搜索结果的第一个标题。
-# 断言：第一个标题是否包含关键字。
-# 搜索地址: https://ceshiren.com/search
 import allure
 import pytest
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
+
 from 用户端测试.utils.operate_yaml import OperateYaml
 
 
-class TestAdvancedSearch:
-    # 所用XPATH路径
+class TestAdvancedSearchPlus:
     target_path = "https://ceshiren.com/search"
     search_box_ele = '//*[@aria-label="输入搜索关键字"]'
     search_button_ele = '//*[@aria-label="搜索"][@type="button"]'
@@ -37,8 +29,8 @@ class TestAdvancedSearch:
 
     def setup_class(self):
         """
-        初始化 chrome
-        添加显示等待3秒
+        浏览器初始化
+        增加显示等待
         打开目标地址
         """
         self.driver = webdriver.Chrome()
@@ -46,12 +38,14 @@ class TestAdvancedSearch:
         self.driver.get(self.target_path)
 
     def teardown_class(self):
-        # 每执行一个测试用例,就要执行退出操作
+        """
+        执行完当前全部用例后,关闭浏览器
+        """
         self.driver.quit()
 
     @pytest.mark.parametrize('search_text, desc',
                              OperateYaml.read_yaml('datas/search_data.yaml').get("validDatas"))
-    def test_advanced_search_valid(self, search_text, desc):
+    def test_search_valid(self, search_text, desc):
         """
         设置用例标题
         查找搜索框
@@ -65,7 +59,7 @@ class TestAdvancedSearch:
         allure.dynamic.title(desc)
 
         # 1.查找搜索框 2.清空搜索框内容 3.键入搜索内容
-        search_box = WebDriverWait(self.driver, 5).\
+        search_box = WebDriverWait(self.driver, 5). \
             until(expected_conditions.element_to_be_clickable((By.XPATH, self.search_box_ele)))
         search_box.clear()
         search_box.send_keys(search_text)
@@ -74,7 +68,7 @@ class TestAdvancedSearch:
         self.driver.find_element(By.XPATH, self.search_button_ele).click()
 
         # 确认结果返回值
-        search_result_object = WebDriverWait(self.driver, 5).\
+        search_result_object = WebDriverWait(self.driver, 5). \
             until(expected_conditions.visibility_of_element_located((By.XPATH, self.search_result_ele)))
         search_results = search_result_object.text
 
