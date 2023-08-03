@@ -1,20 +1,18 @@
 search:
   datas:
     validDatas:
-      - "Selenium"
-      - "Appium"
-      - "面试"
-    validDataIds:
-      - "搜索Selenium"
-      - "搜索Appium"
-      - "搜索面试"
+      - ["Selenium", "搜索Selenium"]
+      - ["Appium", "搜索Appium"]
+      - ["面试", "搜索面试"]
+      - ["SELENIUM", "搜索SELENIUM,大小写转换情况"]
+      - ["APPIUM", "搜索APPIUM,大小写转换情况"]
     invalidDatas:
-      - "@!#$%"
-      - "11111111111111111111111111111111111111"
-      - "  "
-    invalidDataIds:
-      - "特殊字符查询"
-      - "超过限制长度查询"
-      - "空字符串查询"
-
-
+      - ["@!#$%", "特殊字符查询"]
+      - ["11111111111111111111111111111111111111", "超过限制长度查询"]
+      - ["  ", "空字符串查询"]
+      - ["mianshi", "搜索mianshi,中文拼音转换情况"]
+    specialDatas:
+      - ["sel", "搜索时自动补全情况"]
+      - ["selen", "搜索selenium部分匹配情况"]
+      - ["Selenium", "多次搜索selenium,确认检查结果是否稳定"]
+      - ["selenium", "弱网搜索"]
