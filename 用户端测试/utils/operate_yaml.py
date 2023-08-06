@@ -9,6 +9,6 @@ class OperateYaml:
         target_path = os.path.join(cur_dir, path)
         with open(target_path, encoding='utf-8') as f:
             results = yaml.safe_load(f)
-            results = results.get("search")["datas"]
+            results = results.get("search")
             return results
 

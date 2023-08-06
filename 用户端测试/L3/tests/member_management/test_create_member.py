@@ -1,5 +1,4 @@
 from selenium import webdriver
-
 from 用户端测试.L3.page_objects.login_page import LoginPage
 
 
@@ -9,13 +8,16 @@ class TestCreateMember:
         self.driver = webdriver.Chrome()
         self.driver.implicitly_wait(3)
 
+    def teardown_class(self):
+        self.driver.quit()
+
+
     def test_create_member_1(self):
         """
         进入通讯录页面
         点击添加成员
         点击保存
         获取结果验证
-        :return
         """
         login_page = LoginPage(self.driver)
         result = login_page.\

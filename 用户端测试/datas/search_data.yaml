@@ -1,17 +1,16 @@
 search:
-  datas:
-    validDatas:
-      - ["Selenium", "搜索Selenium"]
-      - ["Appium", "搜索Appium"]
-      - ["面试", "搜索面试"]
-      - ["SELENIUM", "搜索SELENIUM,大小写转换情况"]
-      - ["APPIUM", "搜索APPIUM,大小写转换情况"]
-    invalidDatas:
-      - ["@!#$%", "特殊字符查询"]
-      - ["11111111111111111111111111111111111111", "超过限制长度查询"]
-      - ["  ", "空字符串查询"]
-      - ["mianshi", "搜索mianshi,中文拼音转换情况"]
-    specialDatas:
-      - ["seleni", "搜索时自动补全情况"]
-      - ["selen", "搜索selenium部分匹配情况"]
-      - ["Selenium", "多次搜索selenium,确认检查结果是否稳定"]
+  validDates:
+    - ["Selenium", "搜索Selenium"]
+    - ["Appium", "搜索Appium"]
+    - ["面试", "搜索面试"]
+    - ["SELENIUM", "搜索SELENIUM,大小写转换情况"]
+    - ["APPIUM", "搜索APPIUM,大小写转换情况"]
+  invalidDates:
+    - ["@!#$%", "特殊字符查询"]
+    - ["11111111111111111111111111111111111111", "超过限制长度查询"]
+    - ["  ", "空字符串查询"]
+    - ["mianshi", "搜索mianshi,中文拼音转换情况"]
+  specialDates:
+    - ["seleni", "搜索时自动补全情况"]
+    - ["selen", "搜索selenium部分匹配情况"]
+    - ["Selenium", "多次搜索selenium,确认检查结果是否稳定"]
