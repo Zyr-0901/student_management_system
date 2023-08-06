@@ -8,7 +8,7 @@ class HomePage(BasePage):
         """
         点击添加成员
         """
-        self.do_find(By.XPATH, '//*[@node-type="addmember"]').click()
+        self.do_find(By.XPATH, '//*[@class="ww_operationBar"]//*[text()="添加成员"]').click()
         from 用户端测试.L3.page_objects.create_member_page import CreateMemberPage
         return CreateMemberPage(self.driver)
 

@@ -28,7 +28,7 @@ class TestCreateMember:
         """
         result = self.home.go_to_member_list()\
             .click_add()\
-            .create_member_save(username, acctid, phone, desc)\
+            .create_member_save(username, acctid, phone)\
             .get_operate_results()
         assert result == username
         TestDeleteMember.test_delete_member(self.driver)
@@ -45,7 +45,7 @@ class TestCreateMember:
         """
         result = self.home.go_to_member_list()\
             .click_add()\
-            .create_member_save_and_continue(username, acctid, phone, desc)\
+            .create_member_save_and_continue(username, acctid, phone)\
             .get_operate_results()
         assert result == username
 
@@ -58,7 +58,7 @@ class TestCreateMember:
         点击保存
         """
         result = self.home.click_add()\
-            .create_member_save(username, acctid, phone, desc) \
+            .create_member_save(username, acctid, phone) \
             .get_operate_results()
         assert result == username
 
@@ -71,6 +71,6 @@ class TestCreateMember:
         点击保存并继续添加
         """
         result = self.home.click_add()\
-            .create_member_save_and_continue(username, acctid, phone, desc) \
+            .create_member_save_and_continue(username, acctid, phone) \
             .get_operate_results()
         assert result == username

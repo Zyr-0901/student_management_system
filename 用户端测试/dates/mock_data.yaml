@@ -16,4 +16,4 @@ search:
     - ["Selenium", "多次搜索selenium,确认检查结果是否稳定"]
 qywx:
   create:
-    - ["test1", "test1@qq.com", "15650779709", "冒烟测试"]
+    - ["test10", "test1@qq.com", "15650779709", "冒烟测试"]
