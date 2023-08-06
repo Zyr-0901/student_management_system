@@ -6,9 +6,9 @@ from hero.hero_management import HeroManagement
 
 @pytest.mark.heroValid
 @pytest.mark.parametrize('name, desc',
-                         DealYaml.load_yaml('datas/hero_management.yaml').
+                         DealYaml.load_yaml('dates/hero_management.yaml').
                          get("find").
-                         get("datas").
+                         get("dates").
                          get("validDatas"))
 def test_find_valid(name, desc):
     """
@@ -27,8 +27,8 @@ def test_find_valid(name, desc):
 @pytest.mark.xfail
 @pytest.mark.heroInvalid
 @pytest.mark.parametrize('name, desc',
-                         DealYaml.load_yaml('datas/hero_management.yaml').
-                         get("find").get("datas").get("invalidDatas"))
+                         DealYaml.load_yaml('dates/hero_management.yaml').
+                         get("find").get("dates").get("invalidDatas"))
 def test_find_invalid(name, desc):
     """
     :param name:

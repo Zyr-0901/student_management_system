@@ -11,11 +11,9 @@ class LoginPage(BasePage):
         """
         打开登录页
         强制等待提供人工扫码时间
-        获取cookie,并存入yaml文件,以便后续读取
-
-        问题:
-        1.解决cookie复用情况
-        :return:
+        获取cookie
+        在后续请求植入cookie
+        点击首页，验证植入cookie是否成功
         """
         # 打开企业微信登录页
         self.driver.get(self._BASE_URL)

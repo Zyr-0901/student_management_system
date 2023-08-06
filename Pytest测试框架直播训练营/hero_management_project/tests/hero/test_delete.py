@@ -6,9 +6,9 @@ from hero.hero_management import HeroManagement
 
 @pytest.mark.heroValid
 @pytest.mark.parametrize('name, desc',
-                         DealYaml.load_yaml("datas/hero_management.yaml").
+                         DealYaml.load_yaml("dates/hero_management.yaml").
                          get("delete").
-                         get("datas").
+                         get("dates").
                          get("validDatas"))
 def test_delete_valid(name, desc):
     """
@@ -27,9 +27,9 @@ def test_delete_valid(name, desc):
 @pytest.mark.xfail
 @pytest.mark.heroInvalid
 @pytest.mark.parametrize('name, desc',
-                         DealYaml.load_yaml("datas/hero_management.yaml").
+                         DealYaml.load_yaml("dates/hero_management.yaml").
                          get("delete").
-                         get("datas").
+                         get("dates").
                          get("invalidDatas"))
 def test_delete_invalid(name, desc):
     """

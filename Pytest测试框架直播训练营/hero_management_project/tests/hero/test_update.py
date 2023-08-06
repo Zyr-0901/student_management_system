@@ -6,9 +6,9 @@ from hero.hero_management import HeroManagement
 
 @pytest.mark.heroValid
 @pytest.mark.parametrize('name, volume, desc',
-                         DealYaml.load_yaml("datas/hero_management.yaml").
+                         DealYaml.load_yaml("dates/hero_management.yaml").
                          get("update").
-                         get("datas").
+                         get("dates").
                          get("validDates"))
 def test_update_valid(name, volume, desc):
     """
@@ -28,9 +28,9 @@ def test_update_valid(name, volume, desc):
 @pytest.mark.xfail
 @pytest.mark.heroInvalid
 @pytest.mark.parametrize('name, volume, desc',
-                         DealYaml.load_yaml('datas/hero_management.yaml').
+                         DealYaml.load_yaml('dates/hero_management.yaml').
                          get("update").
-                         get("datas").
+                         get("dates").
                          get("invalidDates"))
 def test_update_invalid(name, volume, desc):
     """

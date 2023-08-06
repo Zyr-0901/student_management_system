@@ -8,7 +8,7 @@
 # 1. 只对create_hero做了测试，其他方法的也可以写一下
 # 2. 测试数据太少，根据等价类方法，各种组合的情况可以多设计一些
 # 3. @pytest.mark.parametrize('volumes_update',
-#                          DealYaml.load_yaml('datas/hero_add.yaml').get('validDatas'),
+#                          DealYaml.load_yaml('dates/hero_add.yaml').get('validDatas'),
 #                          indirect=True)
 # def test_add_valid(volumes_update):
 #     name = volumes_update[0]
@@ -19,7 +19,7 @@
 # 这段代码也可以改造成下面的格式：
 # @pytest.mark.createHeroInvalid
 # @pytest.mark.parametrize('name, volume, power, desc',
-#                          DealYaml.load_yaml('datas/hero_add.yaml').get('validDatas'))
+#                          DealYaml.load_yaml('dates/hero_add.yaml').get('validDatas'))
 # def test_add_valid(name, volume, power, desc):
 
 import os
@@ -75,7 +75,7 @@ def volumes_update(request):
 
 @pytest.mark.createHeroValid
 @pytest.mark.parametrize('volumes_update',
-                         DealYaml.load_yaml('datas/hero_management.yaml').get('validDatas'),
+                         DealYaml.load_yaml('dates/hero_management.yaml').get('validDatas'),
                          indirect=True)
 def test_add_valid(volumes_update):
     name = volumes_update[0]
@@ -99,7 +99,7 @@ def test_add_valid(volumes_update):
 
 @pytest.mark.createHeroInvalid
 @pytest.mark.parametrize('name, volume, power, desc',
-                         DealYaml.load_yaml('datas/hero_management.yaml').get('invalidDatas'))
+                         DealYaml.load_yaml('dates/hero_management.yaml').get('invalidDatas'))
 def test_add_invalid(name, volume, power, desc):
     # 传入测试用例
     # 调用创建方法,创建

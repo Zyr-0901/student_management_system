@@ -9,7 +9,7 @@ services:
          MARIADB_DATABASE: bitnami_testlink
          ALLOW_EMPTY_PASSWORD: yes
      volumes:
-         - /datas/testlink/:/var/lib/mysql
+         - /dates/testlink/:/var/lib/mysql
   testlink:
       image: bitnami/testlink-archived:latest
       ports:

@@ -2,7 +2,7 @@
 # 1. 只对create_hero做了测试，其他方法的也可以写一下
 # 2. 测试数据太少，根据等价类方法，各种组合的情况可以多设计一些
 # 3. @pytest.mark.parametrize('volumes_update',
-#                          DealYaml.load_yaml('datas/hero_add.yaml').get('validDatas'),
+#                          DealYaml.load_yaml('dates/hero_add.yaml').get('validDatas'),
 #                          indirect=True)
 # def test_add_valid(volumes_update):
 #     name = volumes_update[0]
@@ -13,7 +13,7 @@
 # 这段代码也可以改造成下面的格式：
 # @pytest.mark.createHeroInvalid
 # @pytest.mark.parametrize('name, volume, power, desc',
-#                          DealYaml.load_yaml('datas/hero_add.yaml').get('validDatas'))
+#                          DealYaml.load_yaml('dates/hero_add.yaml').get('validDatas'))
 # def test_add_valid(name, volume, power, desc):
 
 # TODO
@@ -25,7 +25,7 @@ from deal_yaml import DealYaml
 from hero.hero_management import HeroManagement
 
 
-@pytest.fixture(params=DealYaml.load_yaml('datas/hero_management.yaml').get("add").get("datas").get("validDates"))
+@pytest.fixture(params=DealYaml.load_yaml('dates/hero_management.yaml').get("add").get("dates").get("validDates"))
 def create_hero_params(request):
     """
     获取传入参数
@@ -40,9 +40,9 @@ def create_hero_params(request):
 
 @pytest.mark.heroValid
 # @pytest.mark.parametrize('name, volume, power, desc',
-#                          DealYaml.load_yaml('datas/hero_management.yaml').
+#                          DealYaml.load_yaml('dates/hero_management.yaml').
 #                          get("add").
-#                          get("datas").
+#                          get("dates").
 #                          get("validDates"))
 def test_add_valid(create_hero_params):
     """
@@ -73,9 +73,9 @@ def test_add_valid(create_hero_params):
 @pytest.mark.xfail
 @pytest.mark.heroInvalid
 # @pytest.mark.parametrize('name, volume, power, desc',
-#                          DealYaml.load_yaml('datas/hero_management.yaml').
+#                          DealYaml.load_yaml('dates/hero_management.yaml').
 #                          get("add").
-#                          get("datas").
+#                          get("dates").
 #                          get("invalidDates"))
 def test_add_invalid(create_hero_params):
     """

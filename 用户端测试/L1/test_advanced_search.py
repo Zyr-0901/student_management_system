@@ -50,7 +50,7 @@ class TestAdvancedSearch:
         self.driver.quit()
 
     @pytest.mark.parametrize('search_text, desc',
-                             OperateYaml.read_yaml('datas/search_data.yaml').get("validDates"))
+                             OperateYaml.read_yaml('dates/mock_data.yaml').get("search").get("validDates"))
     def test_advanced_search_valid(self, search_text, desc):
         """
         设置用例标题
@@ -82,7 +82,7 @@ class TestAdvancedSearch:
         assert search_text.lower() in search_results.lower()
 
     @pytest.mark.parametrize('search_text, desc',
-                             OperateYaml.read_yaml('datas/search_data.yaml').get("invalidDates"))
+                             OperateYaml.read_yaml('dates/mock_data.yaml').get("search").get("invalidDates"))
     def test_search_invalid(self, search_text, desc):
         """
         设置用例标题
@@ -122,7 +122,7 @@ class TestAdvancedSearch:
             assert search_results == ''
 
     @pytest.mark.parametrize('search_text, desc',
-                             OperateYaml.read_yaml('datas/search_data.yaml').get("specialDates"))
+                             OperateYaml.read_yaml('dates/mock_data.yaml').get("search").get("specialDates"))
     def test_search_special(self, search_text, desc):
         """
         判断是否可以自动TAB补全
