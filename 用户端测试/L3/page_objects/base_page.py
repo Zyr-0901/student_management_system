@@ -9,6 +9,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 
 
 class BasePage:
+    _INDEX_URL = "https://work.weixin.qq.com/wework_admin/frame"
     def __init__(self, driver=None):
         if driver:
             self.driver = driver
@@ -50,22 +51,25 @@ class BasePage:
 
     def confirm_cookie_status(self):
         """
+        访问企业微信首页
         判断cookies是否过期
-        过期返回false
+        过期返回expiry
         否则返回cookie
         """
+        self.driver.get(self._INDEX_URL)
         current_time = datetime.now()
         base_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
         cookie_path = os.path.join(base_path, 'datas/cookies.yaml')
-        with open(cookie_path, 'w') as f:
-            cookies = yaml.safe_dump(f)
-        for cookie in cookies:
-            expiry = cookie.get("expiry")
-            if expiry is not None:
-                expiry_time = datetime.fortimestamp(expiry)
-                if current_time >= expiry_time:
-                    return "expire"
-            else:
-                return "expire"
-        return cookies
+        with open(cookie_path) as f:
+            cookies = yaml.safe_load(f)
+        if cookies is not None:
+            for cookie in cookies:
+                expiry = cookie.get("expiry")
+                if expiry is not None:
+                    expiry_time = datetime.fromtimestamp(expiry)
+                    if current_time >= expiry_time:
+                        return "expire"
+            return cookies
+        else:
+            return "expire"
 

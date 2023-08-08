@@ -53,16 +53,16 @@
   path: /
   sameSite: Lax
   secure: false
-  value: a9467504
+  value: a4993875
 - domain: .work.weixin.qq.com
   httpOnly: true
   name: wwrtx.refid
   path: /
   sameSite: Lax
   secure: false
-  value: '421661331461288'
+  value: '421661331161426'
 - domain: .work.weixin.qq.com
-  expiry: 1694078673
+  expiry: 1694089178
   httpOnly: false
   name: wwrtx.i18n_lan
   path: /
@@ -75,16 +75,16 @@
   path: /
   sameSite: Lax
   secure: false
-  value: H9qIFHSxTM1Gv4sAXhfA3Vh5xITB8hzg_02gib3tIkj1jkK3Roi2cyJik8lPxCvkQOnkCi5fr7iwCOsNpM7ceJunJODO4UUKs2YBhJMnSHxp6rZ6XIuDHb8-dv-cDgljfxQNPR2z6NcU6XnrfnaCuuTMZO10njvU5wzDaaJJpZnEqfuXOA3citZC2_ZPAS6cpw9ZWILMocj1gS9tZsj9mnqt0EatmIArOi26EsD3Sb8eOrI7TMVrw5YI--IRbenitEhFFvppnxuhOx-T0iVdPA
+  value: ZLDv0sWn_-Bty-zr0qihSfdWkGT4m42ViqjfbBF4mnRD69ihLq-DsAbrE84h-ZWqE3UpMCET-K97ppR-jNIc6QM20lBpiT86Uvn_jdmqMcM6wBvJl0AOhrUhOiyFGkbKm_Y8hYTKy8d_h2foe7V2WuMAKVW7zelRx6BBPaZC_gCyelXXNsxTA4AkEvr5yDU8rnbNtqevDKhyL4lJIr_AvP-qgjhw7PqHo57i4bC0WrgjF99eWu3fbpMoqlZs6PHIP48Kkz95CzIWGqpUpfCLFg
 - domain: .work.weixin.qq.com
   httpOnly: true
   name: wwrtx.sid
   path: /
   sameSite: Lax
   secure: false
-  value: ma1VuDgaeF_sUZ0E17NPZNK_ur5KZpSL5QlO4QJF1er49VF-v--MVB4rmVw85EEn
+  value: ma1VuDgaeF_sUZ0E17NPZHcZgI7M_iOMSHhkURwBB9n7_2U6RMBoB1lRJiXQBl31
 - domain: .work.weixin.qq.com
-  expiry: 1723022662
+  expiry: 1723033162
   httpOnly: false
   name: wwrtx.c_gdpr
   path: /

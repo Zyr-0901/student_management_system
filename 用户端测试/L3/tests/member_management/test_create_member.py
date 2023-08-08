@@ -28,12 +28,12 @@ class TestCreateMember:
         获取结果验证
         """
         result = self.home\
-        #     .go_to_member_list()\
-        #     .click_add()\
-        #     .create_member_save(username, acctid, phone)\
-        #     .get_operate_results()
-        # assert result == username
-        # TestDeleteMember.test_delete_member(username)
+            .go_to_member_list()\
+            .click_add()\
+            .create_member_save(username, acctid, phone)\
+            .get_operate_results()
+        assert result == username
+        TestDeleteMember.test_delete_member(username)
 
     @pytest.mark.parametrize("username, acctid, phone, desc",
                              OperateYaml.read_yaml("dates/mock_data.yaml").get("qywx").get("create"))

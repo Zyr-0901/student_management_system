@@ -10,7 +10,6 @@ class CreateMemberPage(BasePage):
         填写相关字段
         点击保存
         """
-        self.wait_element_until_visible((By.ID, 'username'))
         self.do_send_keys(username, By.ID, 'username')
         self.do_send_keys(acctid, By.ID, 'memberAdd_acctid')
         self.do_send_keys(phone, By.ID, 'memberAdd_phone')
@@ -22,7 +21,6 @@ class CreateMemberPage(BasePage):
         填写相关字段
         点击保存并继续添加
         """
-        self.wait_element_until_visible((By.ID, 'username'))
         self.do_send_keys(username, By.ID, 'username')
         self.do_send_keys(acctid, By.ID, 'memberAdd_acctid')
         self.do_send_keys(phone, By.ID, 'memberAdd_phone')

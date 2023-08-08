@@ -35,7 +35,7 @@ class LoginPage(BasePage):
             cookie_path = os.path.join(base_path, 'datas/cookies.yaml')
             with open(cookie_path, 'w') as f:
                 yaml.safe_dump(cookies, f)
-
+            time.sleep(2)
         # 植入cookie
         for c in cookies:
             self.driver.add_cookie(c)

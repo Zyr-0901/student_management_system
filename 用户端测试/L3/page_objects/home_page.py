@@ -15,7 +15,6 @@ class HomePage(BasePage):
         """
         点击通讯录
         """
-        ele = self.wait_element_until_visible((By.ID, "menu_contacts"))
-        ele.click()
+        self.wait_element_until_visible((By.ID, "menu_contacts")).click()
         from 用户端测试.L3.page_objects.member_list_page import MemberListPage
         return MemberListPage(self.driver)
