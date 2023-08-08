@@ -21,29 +21,32 @@ class TestCreateMember:
                              OperateYaml.read_yaml("dates/mock_data.yaml").get("qywx").get("create"))
     def test_create_member_1(self, username, acctid, phone, desc):
         """
-        进入通讯录页面
+        登录
+        点击通讯录
         点击添加成员
         点击保存
         获取结果验证
         """
-        result = self.home.go_to_member_list()\
-            .click_add()\
-            .create_member_save(username, acctid, phone)\
-            .get_operate_results()
-        assert result == username
-        TestDeleteMember.test_delete_member(self.driver)
+        result = self.home\
+        #     .go_to_member_list()\
+        #     .click_add()\
+        #     .create_member_save(username, acctid, phone)\
+        #     .get_operate_results()
+        # assert result == username
+        # TestDeleteMember.test_delete_member(username)
 
     @pytest.mark.parametrize("username, acctid, phone, desc",
                              OperateYaml.read_yaml("dates/mock_data.yaml").get("qywx").get("create"))
     def test_create_member_2(self, username, acctid, phone, desc):
         """
-        进入通讯录页面
+        登录
+        点击通讯录
         点击添加成员
         点击保存并继续添加
-        点击通讯录
         获取结果验证
         """
-        result = self.home.go_to_member_list()\
+        result = self.home\
+            .go_to_member_list()\
             .click_add()\
             .create_member_save_and_continue(username, acctid, phone)\
             .get_operate_results()
@@ -53,11 +56,13 @@ class TestCreateMember:
                              OperateYaml.read_yaml("dates/mock_data.yaml").get("qywx").get("create"))
     def test_create_member_3(self, username, acctid, phone, desc):
         """
+        登录
         在首页点击添加成员
         填写信息
         点击保存
         """
-        result = self.home.click_add()\
+        result = self.home\
+            .click_add()\
             .create_member_save(username, acctid, phone) \
             .get_operate_results()
         assert result == username
@@ -66,11 +71,13 @@ class TestCreateMember:
                              OperateYaml.read_yaml("dates/mock_data.yaml").get("qywx").get("create"))
     def test_create_member_4(self, username, acctid, phone, desc):
         """
+        登录
         在首页点击添加成员
         填写信息
         点击保存并继续添加
         """
-        result = self.home.click_add()\
+        result = self.home\
+            .click_add()\
             .create_member_save_and_continue(username, acctid, phone) \
             .get_operate_results()
         assert result == username

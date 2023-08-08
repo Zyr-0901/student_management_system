@@ -6,9 +6,11 @@ from 用户端测试.L3.page_objects.member_list_page import MemberListPage
 class CreateMemberPage(BasePage):
     def create_member_save(self, username="test4", acctid="test4@qq.com", phone="15650779709"):
         """
+        确认待填写字段是否加载出来
         填写相关字段
         点击保存
         """
+        self.wait_element_until_visible((By.ID, 'username'))
         self.do_send_keys(username, By.ID, 'username')
         self.do_send_keys(acctid, By.ID, 'memberAdd_acctid')
         self.do_send_keys(phone, By.ID, 'memberAdd_phone')
@@ -20,6 +22,7 @@ class CreateMemberPage(BasePage):
         填写相关字段
         点击保存并继续添加
         """
+        self.wait_element_until_visible((By.ID, 'username'))
         self.do_send_keys(username, By.ID, 'username')
         self.do_send_keys(acctid, By.ID, 'memberAdd_acctid')
         self.do_send_keys(phone, By.ID, 'memberAdd_phone')

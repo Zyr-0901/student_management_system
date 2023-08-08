@@ -3,7 +3,6 @@ from 用户端测试.L3.page_objects.base_page import BasePage
 
 
 class HomePage(BasePage):
-
     def click_add(self):
         """
         点击添加成员
@@ -16,6 +15,7 @@ class HomePage(BasePage):
         """
         点击通讯录
         """
-        self.do_find((By.ID, "menu_contacts")).click()
+        ele = self.wait_element_until_visible((By.ID, "menu_contacts"))
+        ele.click()
         from 用户端测试.L3.page_objects.member_list_page import MemberListPage
         return MemberListPage(self.driver)
