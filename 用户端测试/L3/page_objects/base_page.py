@@ -36,4 +36,3 @@ class BasePage:
             ele = self.do_find(*by)
             ele.clear()
             ele.send_keys(value)
-
