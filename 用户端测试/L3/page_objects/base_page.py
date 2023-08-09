@@ -1,4 +1,3 @@
-
 import os
 from datetime import datetime
 
@@ -10,6 +9,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 
 class BasePage:
     _INDEX_URL = "https://work.weixin.qq.com/wework_admin/frame"
+
     def __init__(self, driver=None):
         if driver:
             self.driver = driver
@@ -72,4 +72,3 @@ class BasePage:
             return cookies
         else:
             return "expire"
-
