@@ -7,11 +7,11 @@
 代码的 git 地址或帖子地址。
 Allure 报告截图。
 """
+import allure
 import pytest
 from 用户端测试.L3.page_objects.login_page import LoginPage
 from 用户端测试.L3.tests.member_management.test_delete_member import TestDeleteMember
 from 用户端测试.utils.operate_yaml import OperateYaml
-
 
 class TestCreateMember:
     def setup_class(self):
@@ -27,6 +27,8 @@ class TestCreateMember:
         点击保存
         获取结果验证
         """
+        desc += desc
+        allure.dynamic.title(desc)
         result = self.home\
             .go_to_member_list()\
             .click_add()\
@@ -45,6 +47,7 @@ class TestCreateMember:
         点击保存并继续添加
         获取结果验证
         """
+        allure.dynamic.title(desc)
         result = self.home\
             .go_to_member_list()\
             .click_add()\
@@ -62,6 +65,7 @@ class TestCreateMember:
         填写信息
         点击保存
         """
+        allure.dynamic.title(desc)
         result = self.home\
             .click_add()\
             .create_member_save(username, acctid, phone) \
@@ -78,6 +82,7 @@ class TestCreateMember:
         填写信息
         点击保存并继续添加
         """
+        allure.dynamic.title(desc)
         result = self.home\
             .click_add()\
             .create_member_save_and_continue(username, acctid, phone) \
