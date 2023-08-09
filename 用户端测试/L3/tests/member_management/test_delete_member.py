@@ -1,6 +1,7 @@
 import pytest
 from selenium.webdriver.common.by import By
 from 用户端测试.L3.page_objects.login_page import LoginPage
+from 用户端测试.L3.tests.member_management.test_create_member import TestCreateMember
 from 用户端测试.utils.operate_yaml import OperateYaml
 
 
@@ -10,7 +11,7 @@ class TestDeleteMember:
 
     @pytest.mark.parametrize("username, acctid, phone, desc",
                              OperateYaml.read_yaml("dates/mock_data.yaml").get("qywx").get("create"))
-    def test_delete_member(self, username):
+    def test_delete_member(self, username, acctid, phone, desc):
         """
         进入首页
         点击通讯录
@@ -18,6 +19,9 @@ class TestDeleteMember:
         点击删除
         校验结果
         """
+        # 创建数据
+        TestCreateMember.test_create_member_1(username, acctid, phone, desc)
+        # 删除数据
         result = self.home\
             .go_to_member_list()\
             .check_delete_box(username)\

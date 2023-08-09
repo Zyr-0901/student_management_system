@@ -9,6 +9,7 @@ Allure 报告截图。
 """
 import pytest
 from 用户端测试.L3.page_objects.login_page import LoginPage
+from 用户端测试.L3.tests.member_management.test_delete_member import TestDeleteMember
 from 用户端测试.utils.operate_yaml import OperateYaml
 
 
@@ -32,6 +33,7 @@ class TestCreateMember:
             .create_member_save(username, acctid, phone)\
             .get_operate_results()
         assert result == username
+        TestDeleteMember.test_delete_member(username)
 
     @pytest.mark.parametrize("username, acctid, phone, desc",
                              OperateYaml.read_yaml("dates/mock_data.yaml").get("qywx").get("create"))
@@ -49,6 +51,7 @@ class TestCreateMember:
             .create_member_save_and_continue(username, acctid, phone)\
             .get_operate_results()
         assert result == username
+        TestDeleteMember.test_delete_member(username)
 
     @pytest.mark.parametrize("username, acctid, phone, desc",
                              OperateYaml.read_yaml("dates/mock_data.yaml").get("qywx").get("create"))
@@ -64,6 +67,7 @@ class TestCreateMember:
             .create_member_save(username, acctid, phone) \
             .get_operate_results()
         assert result == username
+        TestDeleteMember.test_delete_member(username)
 
     @pytest.mark.parametrize("username, acctid, phone, desc",
                              OperateYaml.read_yaml("dates/mock_data.yaml").get("qywx").get("create"))
@@ -79,3 +83,4 @@ class TestCreateMember:
             .create_member_save_and_continue(username, acctid, phone) \
             .get_operate_results()
         assert result == username
+        TestDeleteMember.test_delete_member(username)
