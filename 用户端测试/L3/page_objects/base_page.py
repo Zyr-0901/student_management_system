@@ -8,7 +8,6 @@ from selenium.webdriver.support.wait import WebDriverWait
 
 
 class BasePage:
-    _INDEX_URL = "https://work.weixin.qq.com/wework_admin/frame"
 
     def __init__(self, driver=None):
         if driver:
@@ -51,7 +50,6 @@ class BasePage:
 
     def confirm_cookie_status(self):
         """
-        访问企业微信首页
         判断cookies是否过期
         过期返回expiry
         否则返回cookie

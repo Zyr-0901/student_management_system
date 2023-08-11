@@ -1,6 +1,5 @@
 import os
 import time
-
 import allure
 import yaml
 from 用户端测试.L3.page_objects.base_page import BasePage
@@ -12,8 +11,8 @@ class LoginPage(BasePage):
 
     def login(self):
         """
+        打开首页
         判断cookie是否过期
-        打开登录页
         强制等待提供人工扫码时间
         获取cookie
         cookie存储
