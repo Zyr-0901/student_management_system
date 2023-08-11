@@ -1,8 +1,6 @@
 import os
 import time
-
 import yaml
-
 from 用户端测试.L3.page_objects.base_page import BasePage
 from 用户端测试.L3.page_objects.home_page import HomePage
 
