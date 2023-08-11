@@ -1,5 +1,7 @@
 import os
 import time
+
+import allure
 import yaml
 from 用户端测试.L3.page_objects.base_page import BasePage
 
@@ -19,25 +21,26 @@ class LoginPage(BasePage):
         点击首页，验证植入cookie是否成功
         """
         # 判断cookie是否过期,未过期返回cookie,否则返回expire
-        self.driver.get(self._INDEX_URL)
-        cookies = self.confirm_cookie_status()
-        if cookies == "expire":
-            # 强制等待,人工扫码
-            time.sleep(20)
-            # 登录成功后获取cookie
-            cookies = self.driver.get_cookies()
-            # cookie存储
-            base_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-            cookie_path = os.path.join(base_path, 'datas/cookies.yaml')
-            with open(cookie_path, 'w') as f:
-                yaml.safe_dump(cookies, f)
-            time.sleep(2)
-        # 植入cookie
-        for c in cookies:
-            self.driver.add_cookie(c)
-        time.sleep(3)
-        # 打开首页确认cookie是否植入成功
-        self.driver.get(self._INDEX_URL)
-        # 进入首页
-        from 用户端测试.L3.page_objects.home_page import HomePage
-        return HomePage(self.driver)
+        with allure.step("登录企业微信"):
+            self.driver.get(self._INDEX_URL)
+            cookies = self.confirm_cookie_status()
+            if cookies == "expire":
+                # 强制等待,人工扫码
+                time.sleep(20)
+                # 登录成功后获取cookie
+                cookies = self.driver.get_cookies()
+                # cookie存储
+                base_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+                cookie_path = os.path.join(base_path, 'datas/cookies.yaml')
+                with open(cookie_path, 'w') as f:
+                    yaml.safe_dump(cookies, f)
+                time.sleep(2)
+            # 植入cookie
+            for c in cookies:
+                self.driver.add_cookie(c)
+            time.sleep(3)
+            # 打开首页确认cookie是否植入成功
+            self.driver.get(self._INDEX_URL)
+            # 进入首页
+            from 用户端测试.L3.page_objects.home_page import HomePage
+            return HomePage(self.driver)
