@@ -2,12 +2,11 @@ import os
 import time
 import yaml
 from 用户端测试.L3.page_objects.base_page import BasePage
-from 用户端测试.L3.page_objects.home_page import HomePage
 
 
 class LoginPage(BasePage):
     _BASE_URL = "https://work.weixin.qq.com/wework_admin/loginpage_wx"
-    _INDEX_URL = "https://work.weixin.qq.com/wework_admin/frame"
+    _INDEX_URL = "https://work.weixin.qq.com/wework_admin/frame#index"
 
     def login(self):
         """
@@ -20,12 +19,11 @@ class LoginPage(BasePage):
         点击首页，验证植入cookie是否成功
         """
         # 判断cookie是否过期,未过期返回cookie,否则返回expire
+        self.driver.get(self._INDEX_URL)
         cookies = self.confirm_cookie_status()
         if cookies == "expire":
-            # 打开企业微信登录页
-            self.driver.get(self._BASE_URL)
             # 强制等待,人工扫码
-            time.sleep(15)
+            time.sleep(20)
             # 登录成功后获取cookie
             cookies = self.driver.get_cookies()
             # cookie存储
@@ -37,8 +35,9 @@ class LoginPage(BasePage):
         # 植入cookie
         for c in cookies:
             self.driver.add_cookie(c)
-        time.sleep(2)
+        time.sleep(3)
         # 打开首页确认cookie是否植入成功
         self.driver.get(self._INDEX_URL)
         # 进入首页
+        from 用户端测试.L3.page_objects.home_page import HomePage
         return HomePage(self.driver)

@@ -1,6 +1,5 @@
 from selenium.webdriver.common.by import By
 from 用户端测试.L3.page_objects.base_page import BasePage
-from 用户端测试.L3.page_objects.member_list_page import MemberListPage
 
 
 class CreateMemberPage(BasePage):
@@ -14,6 +13,7 @@ class CreateMemberPage(BasePage):
         self.do_send_keys(acctid, By.ID, 'memberAdd_acctid')
         self.do_send_keys(phone, By.ID, 'memberAdd_phone')
         self.do_find(By.XPATH, '//*[text()="保存"]').click()
+        from 用户端测试.L3.page_objects.member_list_page import MemberListPage
         return MemberListPage(self.driver)
 
     def create_member_save_and_continue(self, username="test5", acctid="test5@qq.com", phone="15650779710"):
@@ -25,4 +25,5 @@ class CreateMemberPage(BasePage):
         self.do_send_keys(acctid, By.ID, 'memberAdd_acctid')
         self.do_send_keys(phone, By.ID, 'memberAdd_phone')
         self.do_find(By.XPATH, '//*[text()="保存并继续添加"]').click()
+        from 用户端测试.L3.page_objects.member_list_page import MemberListPage
         return MemberListPage(self.driver)

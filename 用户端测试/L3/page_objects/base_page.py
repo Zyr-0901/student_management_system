@@ -56,7 +56,6 @@ class BasePage:
         过期返回expiry
         否则返回cookie
         """
-        self.driver.get(self._INDEX_URL)
         current_time = datetime.now()
         base_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
         cookie_path = os.path.join(base_path, 'datas/cookies.yaml')

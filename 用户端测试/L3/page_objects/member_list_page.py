@@ -1,6 +1,5 @@
 from selenium.webdriver.common.by import By
 from 用户端测试.L3.page_objects.base_page import BasePage
-from 用户端测试.L3.page_objects.delete_member_page import DeleteMemberPage
 
 
 class MemberListPage(BasePage):
@@ -28,4 +27,5 @@ class MemberListPage(BasePage):
         x_path += ']'
         x_path += '//..//../td[1]'
         self.do_find(By.XPATH, x_path).click()
+        from 用户端测试.L3.page_objects.delete_member_page import DeleteMemberPage
         return DeleteMemberPage(self.driver)
