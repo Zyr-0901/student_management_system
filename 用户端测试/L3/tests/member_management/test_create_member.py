@@ -13,7 +13,7 @@ from 用户端测试.L3.page_objects.login_page import LoginPage
 from 用户端测试.utils.operate_yaml import OperateYaml
 
 
-@allure.feature("创建成员")
+@allure.feature("创建通讯录成员")
 class TestCreateMember:
     def setup_class(self):
         self.home = LoginPage().login()
@@ -38,7 +38,6 @@ class TestCreateMember:
         点击保存
         获取结果验证
         """
-        desc += desc
         allure.dynamic.title(desc)
         result = self.home \
             .go_to_member_list() \

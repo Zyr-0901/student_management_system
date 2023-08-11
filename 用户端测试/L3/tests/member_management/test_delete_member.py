@@ -1,6 +1,8 @@
+import allure
 from 用户端测试.L3.page_objects.login_page import LoginPage
 
 
+@allure.feature("删除通讯录成员")
 class TestDeleteMember:
     def setup_class(self):
         self.home = LoginPage().login()
@@ -13,6 +15,7 @@ class TestDeleteMember:
             .click_add() \
             .create_member_save(username, acctid, phone)
 
+    @allure.title("冒烟测试")
     def test_delete_member(self):
         """
         删除流程
