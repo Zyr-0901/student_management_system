@@ -1,4 +1,5 @@
 import os
+import time
 from datetime import datetime
 
 import yaml
@@ -48,6 +49,34 @@ class BasePage:
         return WebDriverWait(self.driver, 10).until(
             expected_conditions.visibility_of_element_located(locator))
 
+    def wait_element_until_click(self, locator: tuple):
+        return WebDriverWait(self.driver, 10).until(
+            expected_conditions.element_to_be_clickable(locator))
+
+    def save_key_screenshots(self, name):
+        """
+        将一些关键步骤进行截图
+        设置文件路径
+        截图
+        存储
+        """
+        timestamp = int(time.time())
+        base_url = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+        image_path = os.path.join(base_url, f"images/{timestamp}_{name}.PNG")
+        self.driver.save_screenshot(image_path)
+
+    def save_key_pagesource(self, name):
+        """
+        将一些关键页面截图
+        设置存放路径
+        保存HTML页面
+        """
+        timestamp = int(time.time())
+        base_url = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+        page_path = os.path.join(base_url, f"page_sources/{timestamp}_{name}.html")
+        with open(page_path, "w", encoding="u8") as f:
+            f.write(self.driver.page_source)
+
     def confirm_cookie_status(self):
         """
         判断cookies是否过期
@@ -69,3 +98,6 @@ class BasePage:
             return cookies
         else:
             return "expire"
+
+    def quit_driver(self):
+        self.driver.quit()

@@ -3,6 +3,7 @@ import time
 import allure
 import yaml
 from 用户端测试.L3.page_objects.base_page import BasePage
+from 用户端测试.utils.log_util import logger
 
 
 class LoginPage(BasePage):
@@ -23,6 +24,7 @@ class LoginPage(BasePage):
         with allure.step("登录企业微信"):
             self.driver.get(self._INDEX_URL)
             cookies = self.confirm_cookie_status()
+            logger.info(f"cookies的结果 {cookies}")
             if cookies == "expire":
                 # 强制等待,人工扫码
                 time.sleep(20)
@@ -33,11 +35,15 @@ class LoginPage(BasePage):
                 cookie_path = os.path.join(base_path, 'datas/cookies.yaml')
                 with open(cookie_path, 'w') as f:
                     yaml.safe_dump(cookies, f)
-                time.sleep(2)
+                # 保存cookie需要足够的时间，否则会保存不完整，导致无法复用
+                time.sleep(5)
             # 植入cookie
+            logger.info("植入cookies")
             for c in cookies:
                 self.driver.add_cookie(c)
-            time.sleep(3)
+            # 植入cookie需要足够的时间，否则会出现植入不完整情况
+
+            time.sleep(5)
             # 打开首页确认cookie是否植入成功
             self.driver.get(self._INDEX_URL)
             # 进入首页

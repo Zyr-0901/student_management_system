@@ -4,13 +4,15 @@ from 用户端测试.L3.page_objects.base_page import BasePage
 
 
 class DeleteMemberPage(BasePage):
-    _BUT_DELETE = '//*[@class="js_operationBar_footer ww_operationBar"]//*[text()="删除"]'
+    _BUT_DELETE = (By.XPATH, '//*[@class="js_operationBar_footer ww_operationBar"]//*[text()="删除"]')
 
     def single_delete(self):
         """
         点击删除
+        TODO: 企业微信通讯需要彻底删除，否则使用相同邮箱创建时会提示，该企业邮箱已在邮箱回收站内; 临时处理方法在后台管理、协作 禁用邮箱
+
         """
         with allure.step("删除勾选的成员"):
-            self.do_find(By.XPATH, self._BUT_DELETE).click()
+            self.wait_element_until_click(self._BUT_DELETE).click()
             from 用户端测试.L3.page_objects.member_list_page import MemberListPage
             return MemberListPage(self.driver)

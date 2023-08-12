@@ -18,8 +18,8 @@ class TestCreateMember:
     def setup_class(self):
         self.home = LoginPage().login()
 
-    def teardown_class(self):
-        self.driver.quit()
+    # def teardown_class(self):
+    #     self.home.quit_driver()
 
     def delete_member(self, username):
         self.home \
@@ -28,9 +28,9 @@ class TestCreateMember:
             .single_delete()
 
     @allure.story("通讯录页面->点击添加成员->点击保存")
-    @pytest.mark.parametrize("username, acctid, phone, desc",
+    @pytest.mark.parametrize("username, acctid, phone, email, desc",
                              OperateYaml.read_yaml("dates/mock_data.yaml").get("qywx").get("create"))
-    def test_create_member_1(self, username, acctid, phone, desc):
+    def test_create_member_1(self, username, acctid, phone, email, desc):
         """
         登录
         点击通讯录
@@ -39,18 +39,18 @@ class TestCreateMember:
         获取结果验证
         """
         allure.dynamic.title(desc)
-        result = self.home \
+        names, emails, phones = self.home \
             .go_to_member_list() \
-            .click_add() \
-            .create_member_save(username, acctid, phone) \
+            .click_add_by_member() \
+            .create_member_save(username, acctid, phone, email) \
             .get_operate_results()
-        assert result == username
+        assert username in names and email in emails and phone in phones
         self.delete_member(username)
 
     @allure.story("通讯录页面->点击添加成员->点击保存并继续添加")
-    @pytest.mark.parametrize("username, acctid, phone, desc",
+    @pytest.mark.parametrize("username, acctid, phone, email, desc",
                              OperateYaml.read_yaml("dates/mock_data.yaml").get("qywx").get("create"))
-    def test_create_member_2(self, username, acctid, phone, desc):
+    def test_create_member_2(self, username, acctid, phone, email, desc):
         """
         登录
         点击通讯录
@@ -61,16 +61,16 @@ class TestCreateMember:
         allure.dynamic.title(desc)
         result = self.home \
             .go_to_member_list() \
-            .click_add() \
-            .create_member_save_and_continue(username, acctid, phone) \
+            .click_add_by_member() \
+            .create_member_save_and_continue(username, acctid, phone, email) \
             .get_operate_results()
         assert result == username
         self.delete_member(username)
 
     @allure.story("首页->点击添加成员->点击保存")
-    @pytest.mark.parametrize("username, acctid, phone, desc",
+    @pytest.mark.parametrize("username, acctid, phone, email, desc",
                              OperateYaml.read_yaml("dates/mock_data.yaml").get("qywx").get("create"))
-    def test_create_member_3(self, username, acctid, phone, desc):
+    def test_create_member_3(self, username, acctid, phone, email, desc):
         """
         登录
         在首页点击添加成员
@@ -79,16 +79,16 @@ class TestCreateMember:
         """
         allure.dynamic.title(desc)
         result = self.home \
-            .click_add() \
-            .create_member_save(username, acctid, phone) \
+            .click_add_by_home() \
+            .create_member_save(username, acctid, phone, email) \
             .get_operate_results()
         assert result == username
         self.delete_member(username)
 
     @allure.story("首页->点击添加成员->点击保存并继续添加")
-    @pytest.mark.parametrize("username, acctid, phone, desc",
+    @pytest.mark.parametrize("username, acctid, phone, email, desc",
                              OperateYaml.read_yaml("dates/mock_data.yaml").get("qywx").get("create"))
-    def test_create_member_4(self, username, acctid, phone, desc):
+    def test_create_member_4(self, username, acctid, phone, email,  desc):
         """
         登录
         在首页点击添加成员
@@ -97,8 +97,8 @@ class TestCreateMember:
         """
         allure.dynamic.title(desc)
         result = self.home \
-            .click_add() \
-            .create_member_save_and_continue(username, acctid, phone) \
+            .click_add_by_home() \
+            .create_member_save_and_continue(username, acctid, phone, emial) \
             .get_operate_results()
         assert result == username
         self.delete_member(username)
