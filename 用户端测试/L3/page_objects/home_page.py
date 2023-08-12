@@ -6,14 +6,13 @@ from 用户端测试.utils.log_util import logger
 
 
 class HomePage(BasePage):
-    _ADD_MEMBER = (By.XPATH, '//*[@class="ww_operationBar"]//*[text()="添加成员"]')
+    _ADD_MEMBER = (By.XPATH, '//*[@node-type="addmember"]')
     _CLICK_MEMBER_LIST = (By.ID, "menu_contacts")
 
     def click_add_by_home(self):
         """
         点击添加成员
         """
-
         with allure.step("在首页,点击添加成员"):
             self.wait_element_until_click(self._ADD_MEMBER).click()
             logger.info("从首页跳转到添加成员页面")

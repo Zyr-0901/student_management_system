@@ -9,6 +9,8 @@ Allure 报告截图。
 """
 import os
 import sys
+import time
+
 import allure
 import pytest
 
@@ -39,9 +41,9 @@ class TestCreateMember:
             .check_delete_box(username) \
             .single_delete()
 
-    @allure.story("通讯录页面->点击添加成员->点击保存")
+    @allure.story("有效测试")
     @pytest.mark.parametrize("username, acctid, phone, email, desc",
-                             OperateYaml.read_yaml("dates/mock_data.yaml").get("qywx").get("create"))
+                             OperateYaml.read_yaml("dates/mock_data.yaml").get("qywx").get("validCreate"))
     def test_create_member_1(self, username, acctid, phone, email, desc):
         """
         登录
@@ -59,9 +61,9 @@ class TestCreateMember:
         assert username in names and email in emails and phone in phones
         self.delete_member(username)
 
-    @allure.story("通讯录页面->点击添加成员->点击保存并继续添加")
+    @allure.story("有效测试")
     @pytest.mark.parametrize("username, acctid, phone, email, desc",
-                             OperateYaml.read_yaml("dates/mock_data.yaml").get("qywx").get("create"))
+                             OperateYaml.read_yaml("dates/mock_data.yaml").get("qywx").get("validCreate"))
     def test_create_member_2(self, username, acctid, phone, email, desc):
         """
         登录
@@ -80,9 +82,9 @@ class TestCreateMember:
         assert username in names and email in emails and phone in phones
         self.delete_member(username)
 
-    @allure.story("首页->点击添加成员->点击保存")
+    @allure.story("有效测试")
     @pytest.mark.parametrize("username, acctid, phone, email, desc",
-                             OperateYaml.read_yaml("dates/mock_data.yaml").get("qywx").get("create"))
+                             OperateYaml.read_yaml("dates/mock_data.yaml").get("qywx").get("validCreate"))
     def test_create_member_3(self, username, acctid, phone, email, desc):
         """
         登录
@@ -98,9 +100,9 @@ class TestCreateMember:
         assert username in names and email in emails and phone in phones
         self.delete_member(username)
 
-    @allure.story("首页->点击添加成员->点击保存并继续添加")
+    @allure.story("有效测试")
     @pytest.mark.parametrize("username, acctid, phone, email, desc",
-                             OperateYaml.read_yaml("dates/mock_data.yaml").get("qywx").get("create"))
+                             OperateYaml.read_yaml("dates/mock_data.yaml").get("qywx").get("validCreate"))
     def test_create_member_4(self, username, acctid, phone, email, desc):
         """
         登录
@@ -116,3 +118,29 @@ class TestCreateMember:
             .get_operate_results()
         assert username in names and email in emails and phone in phones
         self.delete_member(username)
+
+    @allure.story("无效测试")
+    @pytest.mark.parametrize("invalid_type, username, acctid, phone, email, excepted, desc",
+                             OperateYaml.read_yaml("dates/mock_data.yaml").get("qywx").get("invalidCreate"))
+    def test_invalid_create_member(self, invalid_type, username, acctid, phone, email, excepted, desc):
+        allure.dynamic.title(desc)
+        # if invalid_type == "invalidUsername":
+        result = self.home\
+            .click_add_by_home()\
+            .create_member_invalid_username(username, acctid, phone, email)
+        assert result == excepted
+        # if invalid_type == "invalidAcctid":
+        #     result = self.home\
+        #         .click_add_by_home()\
+        #         .create_member_invalid_acctid(username, acctid, phone, email)
+        #     assert result == excepted
+        # if invalid_type == "invalidPhone":
+        #     result = self.home \
+        #         .click_add_by_home() \
+        #         .create_member_invalid_phone(username, acctid, phone, email)
+        #     assert result == excepted
+        # if invalid_type == "invalidEmail":
+        #     result = self.home \
+        #         .click_add_by_home() \
+        #         .create_member_invalid_email(username, acctid, phone, email)
+        #     assert result == excepted

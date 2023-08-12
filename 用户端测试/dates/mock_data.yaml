@@ -15,5 +15,21 @@ search:
     - ["selen", "搜索selenium部分匹配情况"]
     - ["Selenium", "多次搜索selenium,确认检查结果是否稳定"]
 qywx:
-  create:
+  validCreate:
     - ["test13", "test13@qq.com", "15650779713", "test13@qq.com", "冒烟测试"]
+    - ["111111111111111111111111111111111111111111111111111111111111111", "test13@qq.com", "15650779713", "test13@qq.com", "姓名边界值测试:63字符"]
+    - ["11", "test13@qq.com", "15650779713", "test13@qq.com", "姓名边界值测试:2字符"]
+    - ["#@￥%……&", "test13@qq.com", "15650779713", "test13@qq.com", "姓名为特殊字符"]
+    - ["dasfjasf fdsfaf", "test13@qq.com", "15650779713", "test13@qq.com", "姓名为中间部分带空格的"]
+    - [ "test", "test13@qq.com", "12345678901", "test13@qq.com", "手机号输入正确位数的不规则号码" ]
+#    - ["复制粘贴", "test13@qq.com", "15650779713", "test13@qq.com", "姓名使用复制粘贴情况"]
+  invalidCreate:
+    - ["invalidUsername", "", "test13@qq.com", "15650779713", "test13@qq.com",  "请填写姓名", "姓名边界值测试:0字符"]
+    - ["invalidUsername", "111111111111111111111111111111111111111111111111111111111111111111111111111111111111111", "test13@qq.com", "15650779283", "test13@qq.com", "请输入不多于64个字符", "姓名边界值测试:64字符"]
+    - ["invalidUsername", " ", "test13@qq.com", "15650779713", "test13@qq.com", "请填写姓名", "姓名输入空格"]
+#    - ["invalidAcctid", "test", "账号输入中文", "15650779713", "test13@qq.com", "帐号只能由字母、数字及符号（.-_@）组成", "账号输入中文"]
+#    - ["invalidAcctid", "test", "!#$%^", "15650779713", "test13@qq.com", "帐号只能由字母、数字及符号（.-_@）组成", "账号输入除@外的其他特殊字符"]
+#    - ["invalidAcctid", "test", " ", "15650779713", "test13@qq.com", "请填写帐号", "账号输入空格"]
+#    - ["invalidPhone", "test", "test13@qq.com", "1565077980", "test13@qq.com", "请填写正确的手机号码", "手机号输入规则不正确位数"]
+#    - ["invalidEmail", "test", "test13@qq.com", "15650779804", "test13@qq", "请填写正确的邮箱地址", "邮箱输入不完整"]
+#    - ["invalidEmail", "test", "test13@qq.com", "15650779804", "@#$%@qq.com", "请填写正确的邮箱地址", "邮箱输入特殊字符"]

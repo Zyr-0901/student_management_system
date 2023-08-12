@@ -1,7 +1,7 @@
 import os
 import sys
-
 import allure
+
 sys.path.append(os.getcwd())
 from 用户端测试.L3.page_objects.login_page import LoginPage
 
@@ -15,10 +15,10 @@ class TestDeleteMember:
     def teardown_class(self):
         self.driver.quit()
 
-    def create_member(self, username, acctid, phone):
+    def create_member(self, username, acctid, phone, email):
         self.home \
             .click_add() \
-            .create_member_save(username, acctid, phone)
+            .create_member_save(username, acctid, phone, email)
 
     @allure.title("冒烟测试")
     def test_delete_member(self):
@@ -34,7 +34,8 @@ class TestDeleteMember:
         username = "删除成员测试"
         acctid = "delete_member@qq.com"
         phone = "15650771234"
-        self.create_member(username, acctid, phone)
+        email = "delete_member@qq.com"
+        self.create_member(username, acctid, phone, email)
 
         # 删除数据
         result = self.home \
