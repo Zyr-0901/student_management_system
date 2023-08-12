@@ -1,4 +1,5 @@
 import allure
+import time
 from selenium.webdriver.common.by import By
 from 用户端测试.L3.page_objects.base_page import BasePage
 from 用户端测试.utils.log_util import logger
@@ -6,6 +7,7 @@ from 用户端测试.utils.log_util import logger
 
 class DeleteMemberPage(BasePage):
     _BUT_DELETE = (By.XPATH, '//*[@class="js_operationBar_footer ww_operationBar"]//*[text()="删除"]')
+    _CONFIRM_DELETE = (By.XPATH, '//*[@d_ck="submit_hr_helper"]')
 
     def single_delete(self):
         """
@@ -16,5 +18,8 @@ class DeleteMemberPage(BasePage):
         with allure.step("删除勾选的成员"):
             logger.info("通讯录列表删除勾选成员")
             self.wait_element_until_click(self._BUT_DELETE).click()
+            time.sleep(1)
+            self.wait_element_until_click(self._CONFIRM_DELETE).click()
+            time.sleep(2)
             from 用户端测试.L3.page_objects.member_list_page import MemberListPage
             return MemberListPage(self.driver)

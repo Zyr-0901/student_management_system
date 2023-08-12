@@ -1,7 +1,12 @@
+import os
+import sys
+
 import allure
+sys.path.append(os.getcwd())
 from 用户端测试.L3.page_objects.login_page import LoginPage
 
 
+@allure.epic("通讯录管理")
 @allure.feature("删除通讯录成员")
 class TestDeleteMember:
     def setup_class(self):

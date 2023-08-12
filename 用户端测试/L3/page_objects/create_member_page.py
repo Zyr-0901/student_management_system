@@ -1,5 +1,4 @@
 import time
-
 import allure
 from selenium.webdriver.common.by import By
 from 用户端测试.L3.page_objects.base_page import BasePage
@@ -30,10 +29,12 @@ class CreateMemberPage(BasePage):
             self.do_find(self._SAVE_BUT).click()
             time.sleep(3)
             self.save_key_screenshots(f"创建成员{username}")
+            self.save_key_pagesource(f"创建成员{username}")
             from 用户端测试.L3.page_objects.member_list_page import MemberListPage
             return MemberListPage(self.driver)
 
-    def create_member_save_and_continue(self, username="test5", acctid="test5@qq.com", phone="15650779710", email="test4@qq.com"):
+    def create_member_save_and_continue(self, username="test5", acctid="test5@qq.com", phone="15650779710",
+                                        email="test4@qq.com"):
         """
         填写相关字段
         点击保存并继续添加
@@ -48,5 +49,6 @@ class CreateMemberPage(BasePage):
             self.do_find(self._SAVE_BUT_AND_ADD).click()
             time.sleep(3)
             self.save_key_screenshots(f"创建成员{username}")
-            from 用户端测试.L3.page_objects.member_list_page import MemberListPage
-            return MemberListPage(self.driver)
+            self.save_key_pagesource(f"创建成员{username}")
+            from 用户端测试.L3.page_objects.home_page import HomePage
+            return HomePage(self.driver)

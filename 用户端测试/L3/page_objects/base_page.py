@@ -2,6 +2,7 @@ import os
 import time
 from datetime import datetime
 
+import allure
 import yaml
 from selenium import webdriver
 from selenium.webdriver.support import expected_conditions
@@ -62,8 +63,9 @@ class BasePage:
         """
         timestamp = int(time.time())
         base_url = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-        image_path = os.path.join(base_url, f"images/{timestamp}_{name}.PNG")
+        image_path = os.path.join(base_url, f"images/{timestamp}_{name}.png")
         self.driver.save_screenshot(image_path)
+        allure.attach.file(image_path, f"{timestamp}_{name}.PNG", allure.attachment_type.PNG, "png")
 
     def save_key_pagesource(self, name):
         """
@@ -76,6 +78,7 @@ class BasePage:
         page_path = os.path.join(base_url, f"page_sources/{timestamp}_{name}.html")
         with open(page_path, "w", encoding="u8") as f:
             f.write(self.driver.page_source)
+        allure.attach.file(page_path, f"{timestamp}_{name}.html", allure.attachment_type.HTML, "html")
 
     def confirm_cookie_status(self):
         """

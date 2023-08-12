@@ -7,12 +7,17 @@
 代码的 git 地址或帖子地址。
 Allure 报告截图。
 """
+import os
+import sys
 import allure
 import pytest
+
+sys.path.append(os.getcwd())
 from 用户端测试.L3.page_objects.login_page import LoginPage
 from 用户端测试.utils.operate_yaml import OperateYaml
 
 
+@allure.epic("通讯录管理")
 @allure.feature("创建通讯录成员")
 class TestCreateMember:
     def setup_class(self):
@@ -22,6 +27,13 @@ class TestCreateMember:
         self.home.quit_driver()
 
     def delete_member(self, username):
+        """
+        TODO:
+        创建成功后，会多点一次通讯录，可以怎么优化下
+
+        创建完成后，会回到通讯录页面，获取交过校验结果
+        调用删除时，本身当前页面就是通讯录页面，但是为了有通讯录这个对象，所以从self.home 开始
+        """
         self.home \
             .go_to_member_list() \
             .check_delete_box(username) \
@@ -59,12 +71,13 @@ class TestCreateMember:
         获取结果验证
         """
         allure.dynamic.title(desc)
-        result = self.home \
+        names, emails, phones = self.home \
             .go_to_member_list() \
             .click_add_by_member() \
             .create_member_save_and_continue(username, acctid, phone, email) \
+            .go_to_member_list() \
             .get_operate_results()
-        assert result == username
+        assert username in names and email in emails and phone in phones
         self.delete_member(username)
 
     @allure.story("首页->点击添加成员->点击保存")
@@ -78,17 +91,17 @@ class TestCreateMember:
         点击保存
         """
         allure.dynamic.title(desc)
-        result = self.home \
+        names, emails, phones = self.home \
             .click_add_by_home() \
             .create_member_save(username, acctid, phone, email) \
             .get_operate_results()
-        assert result == username
+        assert username in names and email in emails and phone in phones
         self.delete_member(username)
 
     @allure.story("首页->点击添加成员->点击保存并继续添加")
     @pytest.mark.parametrize("username, acctid, phone, email, desc",
                              OperateYaml.read_yaml("dates/mock_data.yaml").get("qywx").get("create"))
-    def test_create_member_4(self, username, acctid, phone, email,  desc):
+    def test_create_member_4(self, username, acctid, phone, email, desc):
         """
         登录
         在首页点击添加成员
@@ -96,9 +109,10 @@ class TestCreateMember:
         点击保存并继续添加
         """
         allure.dynamic.title(desc)
-        result = self.home \
+        names, emails, phones = self.home \
             .click_add_by_home() \
-            .create_member_save_and_continue(username, acctid, phone, emial) \
+            .create_member_save_and_continue(username, acctid, phone, email) \
+            .go_to_member_list() \
             .get_operate_results()
-        assert result == username
+        assert username in names and email in emails and phone in phones
         self.delete_member(username)
