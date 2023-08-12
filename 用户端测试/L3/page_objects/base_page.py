@@ -10,6 +10,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 
 
 class BasePage:
+    _INDEX_URL = "https://work.weixin.qq.com/wework_admin/frame#index"
 
     def __init__(self, driver=None):
         if driver:
@@ -101,6 +102,9 @@ class BasePage:
             return cookies
         else:
             return "expire"
+
+    def back_home(self):
+        self.driver.get(self._INDEX_URL)
 
     def quit_driver(self):
         self.driver.quit()

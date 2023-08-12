@@ -17,7 +17,7 @@ class TestDeleteMember:
 
     def create_member(self, username, acctid, phone, email):
         self.home \
-            .click_add() \
+            .click_add_by_home() \
             .create_member_save(username, acctid, phone, email)
 
     @allure.title("冒烟测试")

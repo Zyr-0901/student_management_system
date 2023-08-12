@@ -1,0 +1,4 @@
+[2023-08-12 18:07:58] [INFO] [home_page.py]/[line: 19]/[click_add_by_home] 从首页跳转到添加成员页面 
+[2023-08-12 18:07:58] [INFO] [create_member_page.py]/[line: 33]/[create_member_save] 创建成员 - name:test13;acctid:test13@qq.com;phone:15650779713;email:test13@qq.com 
+[2023-08-12 18:08:02] [INFO] [member_list_page.py]/[line: 22]/[get_operate_results] 获取创建成员结果 
+[2023-08-12 18:08:11] [INFO] [delete_member_page.py]/[line: 19]/[single_delete] 通讯录列表删除勾选成员 

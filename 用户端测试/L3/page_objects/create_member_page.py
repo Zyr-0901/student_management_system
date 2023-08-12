@@ -14,8 +14,15 @@ class CreateMemberPage(BasePage):
     _EMAIL = (By.ID, 'memberAdd_mail')
     _INVALID_USERNAME_TIP = (By.CSS_SELECTOR, '#username~.ww_inputWithTips_tips')
     _INVALID_ACCTID_TIP = (By.CSS_SELECTOR, '#memberAdd_acctid~.ww_inputWithTips_tips')
-    _INVALID_EMAIL_TIP = (By.CSS_SELECTOR, '#memberAdd_mail~.ww_inputWithTips_tips"')
-    _INVALID_PHONE_TIP = (By.CSS_SELECTOR, '#memberAdd_phone~.ww_inputWithTips_tips"')
+    _INVALID_EMAIL_TIP = (By.CSS_SELECTOR, '#memberAdd_mail~.ww_inputWithTips_tips')
+    _INVALID_PHONE_TIP = (By.CSS_SELECTOR, '#memberAdd_phone~.ww_inputWithTips_tips')
+    _INDEX_URL = "https://work.weixin.qq.com/wework_admin/frame#index"
+
+    def back_home(self):
+        time.sleep(1)
+        self.driver.get(self._INDEX_URL)
+        time.sleep(2)
+        self.wait_element_until_click((By.XPATH, '//*[text()="离开此页"]')).click()
 
     def create_member_save(self, username, acctid, phone, email):
         """
@@ -59,13 +66,13 @@ class CreateMemberPage(BasePage):
     def create_member_invalid_username(self, username, acctid, phone, email):
         logger.info(f"创建成员姓名无效 - name:{username};acctid:{acctid};phone:{phone};email:{email}")
         with allure.step(f"无效姓名测试, {username}"):
-            # self.wait_element_until_visible(self._USERNAME)
+            self.wait_element_until_visible(self._USERNAME)
             self.do_send_keys(username, self._USERNAME)
             self.do_send_keys(acctid, self._ACCTID)
-            result = self.do_find(self._INVALID_USERNAME_TIP)
+            tip_text = self.do_find(self._INVALID_USERNAME_TIP).text
             self.save_key_screenshots(f"成员姓名无效{username}")
-            time.sleep(3)
-            return result.text
+            self.back_home()
+            return tip_text
 
     def create_member_invalid_acctid(self, username, acctid, phone, email):
         logger.info(f"创建成员账号无效 - name:{username};acctid:{acctid};phone:{phone};email:{email}")
@@ -74,10 +81,10 @@ class CreateMemberPage(BasePage):
             self.do_send_keys(username, self._USERNAME)
             self.do_send_keys(acctid, self._ACCTID)
             self.do_send_keys(phone, self._PHONE)
-            result = self.do_find(self._INVALID_ACCTID_TIP)
-            self.save_key_screenshots(f"成员账号无效{username}")
-            time.sleep(3)
-            return result.text
+            tip_text = self.do_find(self._INVALID_ACCTID_TIP).text
+            self.save_key_screenshots(f"成员账号无效{acctid}")
+            self.back_home()
+            return tip_text
 
     def create_member_invalid_email(self, username, acctid, phone, email):
         logger.info(f"创建成员邮箱无效 - name:{username};acctid:{acctid};phone:{phone};email:{email}")
@@ -87,10 +94,10 @@ class CreateMemberPage(BasePage):
             self.do_send_keys(acctid, self._ACCTID)
             self.do_send_keys(email, self._EMAIL)
             self.do_find(By.ID, 'memberAdd_title')
-            result = self.do_find(self._INVALID_EMAIL_TIP)
+            tip_text = self.do_find(self._INVALID_EMAIL_TIP).text
             self.save_key_screenshots(f"成员邮箱无效{email}")
-            time.sleep(3)
-            return result.text
+            self.back_home()
+            return tip_text
 
     def create_member_invalid_phone(self, username, acctid, phone, email):
         logger.info(f"创建成员手机号无效 - name:{username};acctid:{acctid};phone:{phone};email:{email}")
@@ -100,7 +107,7 @@ class CreateMemberPage(BasePage):
             self.do_send_keys(acctid, self._ACCTID)
             self.do_send_keys(phone, self._PHONE)
             self.do_send_keys(email, self._EMAIL)
-            result = self.do_find(self._INVALID_PHONE_TIP)
+            tip_text = self.do_find(self._INVALID_PHONE_TIP).text
             self.save_key_screenshots(f"成员手机号无效{phone}")
-            time.sleep(3)
-            return result.text
+            self.back_home()
+            return tip_text

@@ -1,0 +1,2 @@
+[32mINFO    [0m 用户端测试.utils.log_util:home_page.py:19 从首页跳转到添加成员页面
+[32mINFO    [0m 用户端测试.utils.log_util:create_member_page.py:90 创建成员邮箱无效 - name:test;acctid:test13@qq.com;phone:15650779804;email:@#$%@qq.com

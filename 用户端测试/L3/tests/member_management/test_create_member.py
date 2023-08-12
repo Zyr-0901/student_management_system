@@ -9,8 +9,6 @@ Allure 报告截图。
 """
 import os
 import sys
-import time
-
 import allure
 import pytest
 
@@ -24,6 +22,10 @@ from 用户端测试.utils.operate_yaml import OperateYaml
 class TestCreateMember:
     def setup_class(self):
         self.home = LoginPage().login()
+
+    def setup_method(self):
+        # 希望每个测试用例的都是从index开始的
+        self.home.back_home()
 
     def teardown_class(self):
         self.home.quit_driver()
@@ -93,7 +95,7 @@ class TestCreateMember:
         点击保存
         """
         allure.dynamic.title(desc)
-        names, emails, phones = self.home \
+        names, emails, phones = self.home\
             .click_add_by_home() \
             .create_member_save(username, acctid, phone, email) \
             .get_operate_results()
@@ -124,23 +126,20 @@ class TestCreateMember:
                              OperateYaml.read_yaml("dates/mock_data.yaml").get("qywx").get("invalidCreate"))
     def test_invalid_create_member(self, invalid_type, username, acctid, phone, email, excepted, desc):
         allure.dynamic.title(desc)
-        # if invalid_type == "invalidUsername":
-        result = self.home\
-            .click_add_by_home()\
-            .create_member_invalid_username(username, acctid, phone, email)
+        if invalid_type == "invalidUsername":
+            result = self.home \
+                .click_add_by_home() \
+                .create_member_invalid_username(username, acctid, phone, email)
+        if invalid_type == "invalidAcctid":
+            result = self.home \
+                .click_add_by_home() \
+                .create_member_invalid_acctid(username, acctid, phone, email)
+        if invalid_type == "invalidPhone":
+            result = self.home \
+                .click_add_by_home() \
+                .create_member_invalid_phone(username, acctid, phone, email)
+        if invalid_type == "invalidEmail":
+            result = self.home \
+                .click_add_by_home() \
+                .create_member_invalid_email(username, acctid, phone, email)
         assert result == excepted
-        # if invalid_type == "invalidAcctid":
-        #     result = self.home\
-        #         .click_add_by_home()\
-        #         .create_member_invalid_acctid(username, acctid, phone, email)
-        #     assert result == excepted
-        # if invalid_type == "invalidPhone":
-        #     result = self.home \
-        #         .click_add_by_home() \
-        #         .create_member_invalid_phone(username, acctid, phone, email)
-        #     assert result == excepted
-        # if invalid_type == "invalidEmail":
-        #     result = self.home \
-        #         .click_add_by_home() \
-        #         .create_member_invalid_email(username, acctid, phone, email)
-        #     assert result == excepted

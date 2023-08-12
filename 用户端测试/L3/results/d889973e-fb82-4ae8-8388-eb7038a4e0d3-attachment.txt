@@ -1,0 +1,3 @@
+[32mINFO    [0m 用户端测试.utils.log_util:create_member_page.py:33 创建成员 - name:11;acctid:test13@qq.com;phone:15650779713;email:test13@qq.com
+[32mINFO    [0m 用户端测试.utils.log_util:member_list_page.py:22 获取创建成员结果
+[32mINFO    [0m 用户端测试.utils.log_util:delete_member_page.py:19 通讯录列表删除勾选成员

@@ -14,6 +14,7 @@ class HomePage(BasePage):
         点击添加成员
         """
         with allure.step("在首页,点击添加成员"):
+            time.sleep(3)
             self.wait_element_until_click(self._ADD_MEMBER).click()
             logger.info("从首页跳转到添加成员页面")
             from 用户端测试.L3.page_objects.create_member_page import CreateMemberPage

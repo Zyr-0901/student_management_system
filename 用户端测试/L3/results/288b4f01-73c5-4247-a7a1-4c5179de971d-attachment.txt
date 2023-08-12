@@ -1,0 +1,2 @@
+[2023-08-12 18:12:40] [INFO] [home_page.py]/[line: 19]/[click_add_by_home] 从首页跳转到添加成员页面 
+[2023-08-12 18:12:40] [INFO] [create_member_page.py]/[line: 90]/[create_member_invalid_email] 创建成员邮箱无效 - name:test;acctid:test13@qq.com;phone:15650779804;email:@#$%@qq.com 
