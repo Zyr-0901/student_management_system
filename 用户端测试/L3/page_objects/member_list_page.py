@@ -1,8 +1,8 @@
 import time
-
 import allure
 from selenium.webdriver.common.by import By
 from 用户端测试.L3.page_objects.base_page import BasePage
+from 用户端测试.utils.log_util import logger
 
 
 class MemberListPage(BasePage):
@@ -12,7 +12,6 @@ class MemberListPage(BasePage):
     def click_add_by_member(self):
         """在通讯录页面，点击添加成员"""
         with allure.step("在通讯录页面,点击添加成员"):
-            self.save_key_screenshots("通讯录页")
             self.wait_element_until_click(self._ADD_MEMBER).click()
             from 用户端测试.L3.page_objects.create_member_page import CreateMemberPage
             return CreateMemberPage(self.driver)
@@ -20,7 +19,9 @@ class MemberListPage(BasePage):
     def get_operate_results(self):
         """在通讯录页面获取添加结果"""
         with allure.step("在通讯录页面,获取通讯录列表"):
+            logger.info("获取创建成员结果")
             self.wait_element_until_visible(self._MEMBER_LIST)
+            self.save_key_screenshots("通讯录列表")
             member_list = self.do_find(By.XPATH, '//*[@id="member_list"]')
             names = []
             emails = []

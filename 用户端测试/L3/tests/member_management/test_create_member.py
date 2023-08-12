@@ -18,8 +18,8 @@ class TestCreateMember:
     def setup_class(self):
         self.home = LoginPage().login()
 
-    # def teardown_class(self):
-    #     self.home.quit_driver()
+    def teardown_class(self):
+        self.home.quit_driver()
 
     def delete_member(self, username):
         self.home \

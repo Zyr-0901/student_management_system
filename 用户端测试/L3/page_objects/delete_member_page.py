@@ -1,6 +1,7 @@
 import allure
 from selenium.webdriver.common.by import By
 from 用户端测试.L3.page_objects.base_page import BasePage
+from 用户端测试.utils.log_util import logger
 
 
 class DeleteMemberPage(BasePage):
@@ -13,6 +14,7 @@ class DeleteMemberPage(BasePage):
 
         """
         with allure.step("删除勾选的成员"):
+            logger.info("通讯录列表删除勾选成员")
             self.wait_element_until_click(self._BUT_DELETE).click()
             from 用户端测试.L3.page_objects.member_list_page import MemberListPage
             return MemberListPage(self.driver)

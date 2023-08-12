@@ -3,6 +3,7 @@ import time
 import allure
 from selenium.webdriver.common.by import By
 from 用户端测试.L3.page_objects.base_page import BasePage
+from 用户端测试.utils.log_util import logger
 
 
 class CreateMemberPage(BasePage):
@@ -20,6 +21,7 @@ class CreateMemberPage(BasePage):
         点击保存
         """
         with allure.step("创建成员,并点击保存"):
+            logger.info(f"创建成员 - name:{username};acctid:{acctid};phone:{phone};email:{email}")
             self.wait_element_until_visible(self._USERNAME)
             self.do_send_keys(username, self._USERNAME)
             self.do_send_keys(acctid, self._ACCTID)
@@ -27,7 +29,7 @@ class CreateMemberPage(BasePage):
             self.do_send_keys(email, self._EMAIL)
             self.do_find(self._SAVE_BUT).click()
             time.sleep(3)
-            self.save_key_screenshots("创建页面")
+            self.save_key_screenshots(f"创建成员{username}")
             from 用户端测试.L3.page_objects.member_list_page import MemberListPage
             return MemberListPage(self.driver)
 
@@ -37,12 +39,14 @@ class CreateMemberPage(BasePage):
         点击保存并继续添加
         """
         with allure.step("创建成员,并点击保存并继续添加"):
+            logger.info(f"创建成员 - name:{username};acctid:{acctid};phone:{phone};email:{email}")
             self.wait_element_until_visible(self._USERNAME)
             self.do_send_keys(username, self._USERNAME)
             self.do_send_keys(acctid, self._ACCTID)
             self.do_send_keys(phone, self._PHONE)
             self.do_send_keys(email, self._EMAIL)
             self.do_find(self._SAVE_BUT_AND_ADD).click()
-            self.save_key_screenshots()
+            time.sleep(3)
+            self.save_key_screenshots(f"创建成员{username}")
             from 用户端测试.L3.page_objects.member_list_page import MemberListPage
             return MemberListPage(self.driver)
