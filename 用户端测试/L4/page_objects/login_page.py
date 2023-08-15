@@ -2,12 +2,11 @@ import os
 import time
 import allure
 import yaml
-from 用户端测试.L3.page_objects.base_page import BasePage
+from 用户端测试.L4.page_objects.base_page import BasePage
 from 用户端测试.utils.log_util import logger
 
 
 class LoginPage(BasePage):
-    _BASE_URL = "https://work.weixin.qq.com/wework_admin/loginpage_wx"
     _INDEX_URL = "https://work.weixin.qq.com/wework_admin/frame#index"
 
     def login(self):
@@ -47,5 +46,5 @@ class LoginPage(BasePage):
             # 打开首页确认cookie是否植入成功
             self.driver.get(self._INDEX_URL)
             # 进入首页
-            from 用户端测试.L3.page_objects.home_page import HomePage
+            from 用户端测试.L4.page_objects.home_page import HomePage
             return HomePage(self.driver)

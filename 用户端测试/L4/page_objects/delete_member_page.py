@@ -1,7 +1,7 @@
 import allure
 import time
 from selenium.webdriver.common.by import By
-from 用户端测试.L3.page_objects.base_page import BasePage
+from 用户端测试.L4.page_objects.base_page import BasePage
 from 用户端测试.utils.log_util import logger
 
 
@@ -21,5 +21,5 @@ class DeleteMemberPage(BasePage):
             time.sleep(1)
             self.wait_element_until_click(self._CONFIRM_DELETE).click()
             time.sleep(2)
-            from 用户端测试.L3.page_objects.member_list_page import MemberListPage
+            from 用户端测试.L4.page_objects.member_list_page import MemberListPage
             return MemberListPage(self.driver)

@@ -1,7 +1,7 @@
 import time
 import allure
 from selenium.webdriver.common.by import By
-from 用户端测试.L3.page_objects.base_page import BasePage
+from 用户端测试.L4.page_objects.base_page import BasePage
 from 用户端测试.utils.log_util import logger
 
 
@@ -13,7 +13,7 @@ class MemberListPage(BasePage):
         """在通讯录页面，点击添加成员"""
         with allure.step("在通讯录页面,点击添加成员"):
             self.wait_element_until_click(self._ADD_MEMBER).click()
-            from 用户端测试.L3.page_objects.create_member_page import CreateMemberPage
+            from 用户端测试.L4.page_objects.create_member_page import CreateMemberPage
             return CreateMemberPage(self.driver)
 
     def get_operate_results(self):
@@ -53,5 +53,5 @@ class MemberListPage(BasePage):
             self.save_key_screenshots(f"删除成员{username}")
             # 给截图一些时间
             time.sleep(3)
-            from 用户端测试.L3.page_objects.delete_member_page import DeleteMemberPage
+            from 用户端测试.L4.page_objects.delete_member_page import DeleteMemberPage
             return DeleteMemberPage(self.driver)

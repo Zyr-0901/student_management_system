@@ -1,7 +1,7 @@
 import time
 import allure
 from selenium.webdriver.common.by import By
-from 用户端测试.L3.page_objects.base_page import BasePage
+from 用户端测试.L4.page_objects.base_page import BasePage
 from 用户端测试.utils.log_util import logger
 
 
@@ -41,7 +41,7 @@ class CreateMemberPage(BasePage):
             time.sleep(3)
             self.save_key_screenshots(f"创建成员{username}")
             self.save_key_pagesource(f"创建成员{username}")
-            from 用户端测试.L3.page_objects.member_list_page import MemberListPage
+            from 用户端测试.L4.page_objects.member_list_page import MemberListPage
             return MemberListPage(self.driver)
 
     def create_member_save_and_continue(self, username, acctid, phone, email):
@@ -60,7 +60,7 @@ class CreateMemberPage(BasePage):
             time.sleep(3)
             self.save_key_screenshots(f"创建成员{username}")
             self.save_key_pagesource(f"创建成员{username}")
-            from 用户端测试.L3.page_objects.home_page import HomePage
+            from 用户端测试.L4.page_objects.home_page import HomePage
             return HomePage(self.driver)
 
     def create_member_invalid_username(self, username, acctid, phone, email):

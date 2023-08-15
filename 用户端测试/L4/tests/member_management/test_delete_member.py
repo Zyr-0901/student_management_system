@@ -3,7 +3,7 @@ import sys
 import allure
 
 sys.path.append(os.getcwd())
-from 用户端测试.L3.page_objects.login_page import LoginPage
+from 用户端测试.L4.page_objects.login_page import LoginPage
 
 
 @allure.epic("通讯录管理")
