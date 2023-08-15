@@ -3,6 +3,11 @@ from selenium.webdriver import Chrome
 import selenium.webdriver
 
 
+def driver():
+    pass
+
+
+
 def demo():
     # 配置使用的浏览器
     config.browser_name = 'chrome'
@@ -50,7 +55,7 @@ def demo():
 
     # 执行测试操作
     # 使用brower对象打开基础URL
-    browser.open_url('/')
+    browser.driver().get("http://www.baidu.com")
     # 最大化浏览器窗口
 
 
