@@ -26,7 +26,7 @@ class LoginPage(BasePage):
             logger.info(f"cookies的结果 {cookies}")
             if cookies == "expire":
                 # 强制等待,人工扫码
-                time.sleep(20)
+                time.sleep(30)
                 # 登录成功后获取cookie
                 cookies = self.driver.get_cookies()
                 # cookie存储

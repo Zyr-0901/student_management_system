@@ -702,3 +702,463 @@ Stacktrace:
 [2023-08-12 18:13:17] [INFO] [member_list_page.py]/[line: 22]/[get_operate_results] 获取创建成员结果 
 [2023-08-15 14:50:39] [INFO] [login_page.py]/[line: 27]/[login] cookies的结果 [{'domain': '.work.weixin.qq.com', 'httpOnly': True, 'name': 'wwrtx.logined', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': 'true'}, {'domain': '.work.weixin.qq.com', 'httpOnly': False, 'name': 'wwrtx.cs_ind', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': ''}, {'domain': '.work.weixin.qq.com', 'httpOnly': False, 'name': 'wxpay.vid', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': '1688857704485486'}, {'domain': '.work.weixin.qq.com', 'httpOnly': False, 'name': 'wxpay.corpid', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': '1970326617987674'}, {'domain': '.work.weixin.qq.com', 'httpOnly': False, 'name': 'wwrtx.vid', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': '1688857704485486'}, {'domain': '.work.weixin.qq.com', 'httpOnly': True, 'name': 'wwrtx.ref', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': 'direct'}, {'domain': '.work.weixin.qq.com', 'httpOnly': True, 'name': 'wwrtx.ltype', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': '1'}, {'domain': '.work.weixin.qq.com', 'httpOnly': False, 'name': 'wwrtx.d2st', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': 'a4347745'}, {'domain': '.work.weixin.qq.com', 'httpOnly': True, 'name': 'wwrtx.refid', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': '572416361830960'}, {'domain': '.work.weixin.qq.com', 'expiry': 1694399460, 'httpOnly': False, 'name': 'wwrtx.i18n_lan', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': 'zh'}, {'domain': '.work.weixin.qq.com', 'httpOnly': True, 'name': 'wwrtx.vst', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': 'VVg2zqtbbB475i9U-a9ZZtBqPq7dUhj7BcgugU1GFbeIxXpOIy3WiZpmshqc7znXM94XFm0wCsJLNj3guoHvRIcyL3N7FE8-wElS_SKMIIvJjfXpBs-1Odu4ejyFLeTCdWehgz6uhTVFMassV2ViaY7S85LtiQTDPAMthryjad4DezB-52cUqSAppkVmRtGMgfYBDbSTdFmOzAj4nuWdAnQYd_QFyaSQyopvf8Pvm4RrD5q1U76wMpq0LA1JApztzO54gDfl7jkIeZlpBCFJbA'}, {'domain': '.work.weixin.qq.com', 'httpOnly': True, 'name': 'wwrtx.sid', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': 'ma1VuDgaeF_sUZ0E17NPZGIrGRxJvUZ-racib5_7awDf1ITNNmyqgHetnA1yzriI'}, {'domain': '.work.weixin.qq.com', 'expiry': 1723343430, 'httpOnly': False, 'name': 'wwrtx.c_gdpr', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': '0'}] 
 [2023-08-15 14:50:39] [INFO] [login_page.py]/[line: 41]/[login] 植入cookies 
+[2023-08-16 10:44:31] [INFO] [login_page.py]/[line: 26]/[login] cookies的结果 expire 
+[2023-08-16 10:44:32] [INFO] [login_page.py]/[line: 26]/[login] cookies的结果 expire 
+[2023-08-16 10:44:56] [INFO] [login_page.py]/[line: 40]/[login] 植入cookies 
+[2023-08-16 10:44:57] [INFO] [login_page.py]/[line: 40]/[login] 植入cookies 
+[2023-08-16 10:45:13] [ERROR] [home_page.py]/[line: 37]/[go_to_member_list] 点击通讯录时报错: Message: 
+Stacktrace:
+#0 0x56012b4cb783 <unknown>
+#1 0x56012b1f7917 <unknown>
+#2 0x56012b23631b <unknown>
+#3 0x56012b236411 <unknown>
+#4 0x56012b271674 <unknown>
+#5 0x56012b256e2d <unknown>
+#6 0x56012b26f0d9 <unknown>
+#7 0x56012b256bd3 <unknown>
+#8 0x56012b22aa7b <unknown>
+#9 0x56012b22b81e <unknown>
+#10 0x56012b48ce98 <unknown>
+#11 0x56012b490d67 <unknown>
+#12 0x56012b49b32c <unknown>
+#13 0x56012b491993 <unknown>
+#14 0x56012b460827 <unknown>
+#15 0x56012b4b58a8 <unknown>
+#16 0x56012b4b5a36 <unknown>
+#17 0x56012b4c45f3 <unknown>
+#18 0x7ffac0398609 start_thread
+ 
+[2023-08-16 10:45:14] [ERROR] [home_page.py]/[line: 37]/[go_to_member_list] 点击通讯录时报错: Message: 
+Stacktrace:
+#0 0x56276c968783 <unknown>
+#1 0x56276c694917 <unknown>
+#2 0x56276c6d331b <unknown>
+#3 0x56276c6d3411 <unknown>
+#4 0x56276c70e674 <unknown>
+#5 0x56276c6f3e2d <unknown>
+#6 0x56276c70c0d9 <unknown>
+#7 0x56276c6f3bd3 <unknown>
+#8 0x56276c6c7a7b <unknown>
+#9 0x56276c6c881e <unknown>
+#10 0x56276c929e98 <unknown>
+#11 0x56276c92dd67 <unknown>
+#12 0x56276c93832c <unknown>
+#13 0x56276c92e993 <unknown>
+#14 0x56276c8fd827 <unknown>
+#15 0x56276c9528a8 <unknown>
+#16 0x56276c952a36 <unknown>
+#17 0x56276c9615f3 <unknown>
+#18 0x7f1b9d581609 start_thread
+ 
+[2023-08-16 10:45:24] [ERROR] [home_page.py]/[line: 37]/[go_to_member_list] 点击通讯录时报错: Message: 
+Stacktrace:
+#0 0x56012b4cb783 <unknown>
+#1 0x56012b1f7917 <unknown>
+#2 0x56012b23631b <unknown>
+#3 0x56012b236411 <unknown>
+#4 0x56012b271674 <unknown>
+#5 0x56012b256e2d <unknown>
+#6 0x56012b26f0d9 <unknown>
+#7 0x56012b256bd3 <unknown>
+#8 0x56012b22aa7b <unknown>
+#9 0x56012b22b81e <unknown>
+#10 0x56012b48ce98 <unknown>
+#11 0x56012b490d67 <unknown>
+#12 0x56012b49b32c <unknown>
+#13 0x56012b491993 <unknown>
+#14 0x56012b460827 <unknown>
+#15 0x56012b4b58a8 <unknown>
+#16 0x56012b4b5a36 <unknown>
+#17 0x56012b4c45f3 <unknown>
+#18 0x7ffac0398609 start_thread
+ 
+[2023-08-16 10:45:26] [ERROR] [home_page.py]/[line: 37]/[go_to_member_list] 点击通讯录时报错: Message: 
+Stacktrace:
+#0 0x56276c968783 <unknown>
+#1 0x56276c694917 <unknown>
+#2 0x56276c6d331b <unknown>
+#3 0x56276c6d3411 <unknown>
+#4 0x56276c70e674 <unknown>
+#5 0x56276c6f3e2d <unknown>
+#6 0x56276c70c0d9 <unknown>
+#7 0x56276c6f3bd3 <unknown>
+#8 0x56276c6c7a7b <unknown>
+#9 0x56276c6c881e <unknown>
+#10 0x56276c929e98 <unknown>
+#11 0x56276c92dd67 <unknown>
+#12 0x56276c93832c <unknown>
+#13 0x56276c92e993 <unknown>
+#14 0x56276c8fd827 <unknown>
+#15 0x56276c9528a8 <unknown>
+#16 0x56276c952a36 <unknown>
+#17 0x56276c9615f3 <unknown>
+#18 0x7f1b9d581609 start_thread
+ 
+[2023-08-16 10:45:35] [ERROR] [home_page.py]/[line: 37]/[go_to_member_list] 点击通讯录时报错: Message: 
+Stacktrace:
+#0 0x56012b4cb783 <unknown>
+#1 0x56012b1f7917 <unknown>
+#2 0x56012b23631b <unknown>
+#3 0x56012b236411 <unknown>
+#4 0x56012b271674 <unknown>
+#5 0x56012b256e2d <unknown>
+#6 0x56012b26f0d9 <unknown>
+#7 0x56012b256bd3 <unknown>
+#8 0x56012b22aa7b <unknown>
+#9 0x56012b22b81e <unknown>
+#10 0x56012b48ce98 <unknown>
+#11 0x56012b490d67 <unknown>
+#12 0x56012b49b32c <unknown>
+#13 0x56012b491993 <unknown>
+#14 0x56012b460827 <unknown>
+#15 0x56012b4b58a8 <unknown>
+#16 0x56012b4b5a36 <unknown>
+#17 0x56012b4c45f3 <unknown>
+#18 0x7ffac0398609 start_thread
+ 
+[2023-08-16 10:45:37] [ERROR] [home_page.py]/[line: 37]/[go_to_member_list] 点击通讯录时报错: Message: 
+Stacktrace:
+#0 0x56276c968783 <unknown>
+#1 0x56276c694917 <unknown>
+#2 0x56276c6d331b <unknown>
+#3 0x56276c6d3411 <unknown>
+#4 0x56276c70e674 <unknown>
+#5 0x56276c6f3e2d <unknown>
+#6 0x56276c70c0d9 <unknown>
+#7 0x56276c6f3bd3 <unknown>
+#8 0x56276c6c7a7b <unknown>
+#9 0x56276c6c881e <unknown>
+#10 0x56276c929e98 <unknown>
+#11 0x56276c92dd67 <unknown>
+#12 0x56276c93832c <unknown>
+#13 0x56276c92e993 <unknown>
+#14 0x56276c8fd827 <unknown>
+#15 0x56276c9528a8 <unknown>
+#16 0x56276c952a36 <unknown>
+#17 0x56276c9615f3 <unknown>
+#18 0x7f1b9d581609 start_thread
+ 
+[2023-08-16 10:46:06] [INFO] [login_page.py]/[line: 26]/[login] cookies的结果 expire 
+[2023-08-16 10:46:06] [INFO] [login_page.py]/[line: 26]/[login] cookies的结果 expire 
+[2023-08-16 10:46:41] [INFO] [login_page.py]/[line: 40]/[login] 植入cookies 
+[2023-08-16 10:46:43] [INFO] [login_page.py]/[line: 40]/[login] 植入cookies 
+[2023-08-16 10:46:57] [ERROR] [home_page.py]/[line: 37]/[go_to_member_list] 点击通讯录时报错: Message: 
+Stacktrace:
+#0 0x564555ecc783 <unknown>
+#1 0x564555bf8917 <unknown>
+#2 0x564555c3731b <unknown>
+#3 0x564555c37411 <unknown>
+#4 0x564555c72674 <unknown>
+#5 0x564555c57e2d <unknown>
+#6 0x564555c700d9 <unknown>
+#7 0x564555c57bd3 <unknown>
+#8 0x564555c2ba7b <unknown>
+#9 0x564555c2c81e <unknown>
+#10 0x564555e8de98 <unknown>
+#11 0x564555e91d67 <unknown>
+#12 0x564555e9c32c <unknown>
+#13 0x564555e92993 <unknown>
+#14 0x564555e61827 <unknown>
+#15 0x564555eb68a8 <unknown>
+#16 0x564555eb6a36 <unknown>
+#17 0x564555ec55f3 <unknown>
+#18 0x7f7f007c9609 start_thread
+ 
+[2023-08-16 10:47:09] [ERROR] [home_page.py]/[line: 37]/[go_to_member_list] 点击通讯录时报错: Message: 
+Stacktrace:
+#0 0x564555ecc783 <unknown>
+#1 0x564555bf8917 <unknown>
+#2 0x564555c3731b <unknown>
+#3 0x564555c37411 <unknown>
+#4 0x564555c72674 <unknown>
+#5 0x564555c57e2d <unknown>
+#6 0x564555c700d9 <unknown>
+#7 0x564555c57bd3 <unknown>
+#8 0x564555c2ba7b <unknown>
+#9 0x564555c2c81e <unknown>
+#10 0x564555e8de98 <unknown>
+#11 0x564555e91d67 <unknown>
+#12 0x564555e9c32c <unknown>
+#13 0x564555e92993 <unknown>
+#14 0x564555e61827 <unknown>
+#15 0x564555eb68a8 <unknown>
+#16 0x564555eb6a36 <unknown>
+#17 0x564555ec55f3 <unknown>
+#18 0x7f7f007c9609 start_thread
+ 
+[2023-08-16 10:47:20] [ERROR] [home_page.py]/[line: 37]/[go_to_member_list] 点击通讯录时报错: Message: 
+Stacktrace:
+#0 0x564555ecc783 <unknown>
+#1 0x564555bf8917 <unknown>
+#2 0x564555c3731b <unknown>
+#3 0x564555c37411 <unknown>
+#4 0x564555c72674 <unknown>
+#5 0x564555c57e2d <unknown>
+#6 0x564555c700d9 <unknown>
+#7 0x564555c57bd3 <unknown>
+#8 0x564555c2ba7b <unknown>
+#9 0x564555c2c81e <unknown>
+#10 0x564555e8de98 <unknown>
+#11 0x564555e91d67 <unknown>
+#12 0x564555e9c32c <unknown>
+#13 0x564555e92993 <unknown>
+#14 0x564555e61827 <unknown>
+#15 0x564555eb68a8 <unknown>
+#16 0x564555eb6a36 <unknown>
+#17 0x564555ec55f3 <unknown>
+#18 0x7f7f007c9609 start_thread
+ 
+[2023-08-16 10:47:31] [ERROR] [home_page.py]/[line: 37]/[go_to_member_list] 点击通讯录时报错: Message: 
+Stacktrace:
+#0 0x564555ecc783 <unknown>
+#1 0x564555bf8917 <unknown>
+#2 0x564555c3731b <unknown>
+#3 0x564555c37411 <unknown>
+#4 0x564555c72674 <unknown>
+#5 0x564555c57e2d <unknown>
+#6 0x564555c700d9 <unknown>
+#7 0x564555c57bd3 <unknown>
+#8 0x564555c2ba7b <unknown>
+#9 0x564555c2c81e <unknown>
+#10 0x564555e8de98 <unknown>
+#11 0x564555e91d67 <unknown>
+#12 0x564555e9c32c <unknown>
+#13 0x564555e92993 <unknown>
+#14 0x564555e61827 <unknown>
+#15 0x564555eb68a8 <unknown>
+#16 0x564555eb6a36 <unknown>
+#17 0x564555ec55f3 <unknown>
+#18 0x7f7f007c9609 start_thread
+ 
+[2023-08-16 10:47:42] [ERROR] [home_page.py]/[line: 37]/[go_to_member_list] 点击通讯录时报错: Message: 
+Stacktrace:
+#0 0x564555ecc783 <unknown>
+#1 0x564555bf8917 <unknown>
+#2 0x564555c3731b <unknown>
+#3 0x564555c37411 <unknown>
+#4 0x564555c72674 <unknown>
+#5 0x564555c57e2d <unknown>
+#6 0x564555c700d9 <unknown>
+#7 0x564555c57bd3 <unknown>
+#8 0x564555c2ba7b <unknown>
+#9 0x564555c2c81e <unknown>
+#10 0x564555e8de98 <unknown>
+#11 0x564555e91d67 <unknown>
+#12 0x564555e9c32c <unknown>
+#13 0x564555e92993 <unknown>
+#14 0x564555e61827 <unknown>
+#15 0x564555eb68a8 <unknown>
+#16 0x564555eb6a36 <unknown>
+#17 0x564555ec55f3 <unknown>
+#18 0x7f7f007c9609 start_thread
+ 
+[2023-08-16 10:47:53] [ERROR] [home_page.py]/[line: 37]/[go_to_member_list] 点击通讯录时报错: Message: 
+Stacktrace:
+#0 0x564555ecc783 <unknown>
+#1 0x564555bf8917 <unknown>
+#2 0x564555c3731b <unknown>
+#3 0x564555c37411 <unknown>
+#4 0x564555c72674 <unknown>
+#5 0x564555c57e2d <unknown>
+#6 0x564555c700d9 <unknown>
+#7 0x564555c57bd3 <unknown>
+#8 0x564555c2ba7b <unknown>
+#9 0x564555c2c81e <unknown>
+#10 0x564555e8de98 <unknown>
+#11 0x564555e91d67 <unknown>
+#12 0x564555e9c32c <unknown>
+#13 0x564555e92993 <unknown>
+#14 0x564555e61827 <unknown>
+#15 0x564555eb68a8 <unknown>
+#16 0x564555eb6a36 <unknown>
+#17 0x564555ec55f3 <unknown>
+#18 0x7f7f007c9609 start_thread
+ 
+[2023-08-16 10:47:58] [INFO] [home_page.py]/[line: 19]/[click_add_by_home] 从首页跳转到添加成员页面 
+[2023-08-16 10:47:58] [INFO] [create_member_page.py]/[line: 33]/[create_member_save] 创建成员 - name:111111111111111111111111111111111111111111111111111111111111111;acctid:test13@qq.com;phone:15650779713;email:test13@qq.com 
+[2023-08-16 10:48:04] [ERROR] [home_page.py]/[line: 37]/[go_to_member_list] 点击通讯录时报错: Message: 
+Stacktrace:
+#0 0x564555ecc783 <unknown>
+#1 0x564555bf8917 <unknown>
+#2 0x564555c3731b <unknown>
+#3 0x564555c37411 <unknown>
+#4 0x564555c72674 <unknown>
+#5 0x564555c57e2d <unknown>
+#6 0x564555c700d9 <unknown>
+#7 0x564555c57bd3 <unknown>
+#8 0x564555c2ba7b <unknown>
+#9 0x564555c2c81e <unknown>
+#10 0x564555e8de98 <unknown>
+#11 0x564555e91d67 <unknown>
+#12 0x564555e9c32c <unknown>
+#13 0x564555e92993 <unknown>
+#14 0x564555e61827 <unknown>
+#15 0x564555eb68a8 <unknown>
+#16 0x564555eb6a36 <unknown>
+#17 0x564555ec55f3 <unknown>
+#18 0x7f7f007c9609 start_thread
+ 
+[2023-08-16 10:48:15] [ERROR] [home_page.py]/[line: 37]/[go_to_member_list] 点击通讯录时报错: Message: 
+Stacktrace:
+#0 0x564555ecc783 <unknown>
+#1 0x564555bf8917 <unknown>
+#2 0x564555c3731b <unknown>
+#3 0x564555c37411 <unknown>
+#4 0x564555c72674 <unknown>
+#5 0x564555c57e2d <unknown>
+#6 0x564555c700d9 <unknown>
+#7 0x564555c57bd3 <unknown>
+#8 0x564555c2ba7b <unknown>
+#9 0x564555c2c81e <unknown>
+#10 0x564555e8de98 <unknown>
+#11 0x564555e91d67 <unknown>
+#12 0x564555e9c32c <unknown>
+#13 0x564555e92993 <unknown>
+#14 0x564555e61827 <unknown>
+#15 0x564555eb68a8 <unknown>
+#16 0x564555eb6a36 <unknown>
+#17 0x564555ec55f3 <unknown>
+#18 0x7f7f007c9609 start_thread
+ 
+[2023-08-16 10:48:21] [INFO] [home_page.py]/[line: 19]/[click_add_by_home] 从首页跳转到添加成员页面 
+[2023-08-16 10:48:21] [INFO] [create_member_page.py]/[line: 33]/[create_member_save] 创建成员 - name:#@￥%……&;acctid:test13@qq.com;phone:15650779713;email:test13@qq.com 
+[2023-08-16 10:48:43] [INFO] [home_page.py]/[line: 19]/[click_add_by_home] 从首页跳转到添加成员页面 
+[2023-08-16 10:48:43] [INFO] [create_member_page.py]/[line: 52]/[create_member_save_and_continue] 创建成员 - name:11;acctid:test13@qq.com;phone:15650779713;email:test13@qq.com 
+[2023-08-16 10:50:59] [INFO] [login_page.py]/[line: 26]/[login] cookies的结果 [{'domain': '.work.weixin.qq.com', 'httpOnly': True, 'name': 'wwrtx.logined', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': 'true'}, {'domain': '.work.weixin.qq.com', 'httpOnly': False, 'name': 'wwrtx.cs_ind', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': ''}, {'domain': '.work.weixin.qq.com', 'httpOnly': False, 'name': 'wxpay.vid', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': '1688857704485486'}, {'domain': '.work.weixin.qq.com', 'httpOnly': False, 'name': 'wxpay.corpid', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': '1970326617987674'}, {'domain': '.work.weixin.qq.com', 'httpOnly': False, 'name': 'wwrtx.vid', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': '1688857704485486'}, {'domain': '.work.weixin.qq.com', 'httpOnly': True, 'name': 'wwrtx.ref', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': 'direct'}, {'domain': '.work.weixin.qq.com', 'httpOnly': True, 'name': 'wwrtx.ltype', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': '1'}, {'domain': '.work.weixin.qq.com', 'httpOnly': False, 'name': 'wwrtx.d2st', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': 'a3796201'}, {'domain': '.work.weixin.qq.com', 'httpOnly': True, 'name': 'wwrtx.refid', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': '31271511472765660'}, {'domain': '.work.weixin.qq.com', 'expiry': 1694745998, 'httpOnly': False, 'name': 'wwrtx.i18n_lan', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': 'en'}, {'domain': '.work.weixin.qq.com', 'httpOnly': True, 'name': 'wwrtx.vst', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': '94upNyLjb-Ok0JQlZ7VaufRi-79JDF2Qx4z3goVqwKE3926LpN6Gd8j2bjPpfiLiSin0mJV_R5SUjYX1mX93jCzq7n0BrNtZVibXTeMuGtE4nIQ-hWKMTVQSS93DdLMDlJu8Lf-1C-bfcBQvIIgUhNfKLiILh-ikYoOzesoPO2gVS6iABcpnKoBmkpNfRibNNT9HTQhu6lrhUEpIzJuczYf3d_PzB5pZ7HV_byCOOwk2uLVG6gPoGhTuLb1ZwmJ-sj5dN1liyYnC-GHQ5aVvmg'}, {'domain': '.work.weixin.qq.com', 'httpOnly': True, 'name': 'wwrtx.sid', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': 'ma1VuDgaeF_sUZ0E17NPZABv_53SJHiX2oS09ErEqvh6CF2smwTW166PvAuH9SgX'}, {'domain': '.work.weixin.qq.com', 'expiry': 1723689965, 'httpOnly': False, 'name': 'wwrtx.c_gdpr', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': '0'}] 
+[2023-08-16 10:50:59] [INFO] [login_page.py]/[line: 40]/[login] 植入cookies 
+[2023-08-16 10:50:59] [INFO] [login_page.py]/[line: 26]/[login] cookies的结果 [{'domain': '.work.weixin.qq.com', 'httpOnly': True, 'name': 'wwrtx.logined', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': 'true'}, {'domain': '.work.weixin.qq.com', 'httpOnly': False, 'name': 'wwrtx.cs_ind', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': ''}, {'domain': '.work.weixin.qq.com', 'httpOnly': False, 'name': 'wxpay.vid', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': '1688857704485486'}, {'domain': '.work.weixin.qq.com', 'httpOnly': False, 'name': 'wxpay.corpid', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': '1970326617987674'}, {'domain': '.work.weixin.qq.com', 'httpOnly': False, 'name': 'wwrtx.vid', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': '1688857704485486'}, {'domain': '.work.weixin.qq.com', 'httpOnly': True, 'name': 'wwrtx.ref', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': 'direct'}, {'domain': '.work.weixin.qq.com', 'httpOnly': True, 'name': 'wwrtx.ltype', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': '1'}, {'domain': '.work.weixin.qq.com', 'httpOnly': False, 'name': 'wwrtx.d2st', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': 'a3796201'}, {'domain': '.work.weixin.qq.com', 'httpOnly': True, 'name': 'wwrtx.refid', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': '31271511472765660'}, {'domain': '.work.weixin.qq.com', 'expiry': 1694745998, 'httpOnly': False, 'name': 'wwrtx.i18n_lan', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': 'en'}, {'domain': '.work.weixin.qq.com', 'httpOnly': True, 'name': 'wwrtx.vst', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': '94upNyLjb-Ok0JQlZ7VaufRi-79JDF2Qx4z3goVqwKE3926LpN6Gd8j2bjPpfiLiSin0mJV_R5SUjYX1mX93jCzq7n0BrNtZVibXTeMuGtE4nIQ-hWKMTVQSS93DdLMDlJu8Lf-1C-bfcBQvIIgUhNfKLiILh-ikYoOzesoPO2gVS6iABcpnKoBmkpNfRibNNT9HTQhu6lrhUEpIzJuczYf3d_PzB5pZ7HV_byCOOwk2uLVG6gPoGhTuLb1ZwmJ-sj5dN1liyYnC-GHQ5aVvmg'}, {'domain': '.work.weixin.qq.com', 'httpOnly': True, 'name': 'wwrtx.sid', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': 'ma1VuDgaeF_sUZ0E17NPZABv_53SJHiX2oS09ErEqvh6CF2smwTW166PvAuH9SgX'}, {'domain': '.work.weixin.qq.com', 'expiry': 1723689965, 'httpOnly': False, 'name': 'wwrtx.c_gdpr', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': '0'}] 
+[2023-08-16 10:50:59] [INFO] [login_page.py]/[line: 40]/[login] 植入cookies 
+[2023-08-16 10:52:18] [INFO] [home_page.py]/[line: 19]/[click_add_by_home] 从首页跳转到添加成员页面 
+[2023-08-16 10:52:18] [INFO] [create_member_page.py]/[line: 33]/[create_member_save] 创建成员 - name:111111111111111111111111111111111111111111111111111111111111111;acctid:test13@qq.com;phone:15650779713;email:test13@qq.com 
+[2023-08-16 10:52:40] [INFO] [home_page.py]/[line: 19]/[click_add_by_home] 从首页跳转到添加成员页面 
+[2023-08-16 10:52:40] [INFO] [create_member_page.py]/[line: 33]/[create_member_save] 创建成员 - name:#@￥%……&;acctid:test13@qq.com;phone:15650779713;email:test13@qq.com 
+[2023-08-16 10:53:10] [INFO] [home_page.py]/[line: 19]/[click_add_by_home] 从首页跳转到添加成员页面 
+[2023-08-16 10:53:10] [INFO] [create_member_page.py]/[line: 33]/[create_member_save] 创建成员 - name:test;acctid:test13@qq.com;phone:12345678901;email:test13@qq.com 
+[2023-08-16 10:53:21] [INFO] [home_page.py]/[line: 19]/[click_add_by_home] 从首页跳转到添加成员页面 
+[2023-08-16 10:53:21] [INFO] [create_member_page.py]/[line: 33]/[create_member_save] 创建成员 - name:test13;acctid:test13@qq.com;phone:15650779713;email:test13@qq.com 
+[2023-08-16 10:53:23] [INFO] [member_list_page.py]/[line: 20]/[get_operate_results] 获取创建成员结果 
+[2023-08-16 10:53:34] [INFO] [delete_member_page.py]/[line: 19]/[single_delete] 通讯录列表删除勾选成员 
+[2023-08-16 10:53:35] [INFO] [home_page.py]/[line: 19]/[click_add_by_home] 从首页跳转到添加成员页面 
+[2023-08-16 10:53:35] [INFO] [create_member_page.py]/[line: 52]/[create_member_save_and_continue] 创建成员 - name:11;acctid:test13@qq.com;phone:15650779713;email:test13@qq.com 
+[2023-08-16 10:53:38] [INFO] [login_page.py]/[line: 26]/[login] cookies的结果 [{'domain': '.work.weixin.qq.com', 'httpOnly': True, 'name': 'wwrtx.logined', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': 'true'}, {'domain': '.work.weixin.qq.com', 'httpOnly': False, 'name': 'wwrtx.cs_ind', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': ''}, {'domain': '.work.weixin.qq.com', 'httpOnly': False, 'name': 'wxpay.vid', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': '1688857704485486'}, {'domain': '.work.weixin.qq.com', 'httpOnly': False, 'name': 'wxpay.corpid', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': '1970326617987674'}, {'domain': '.work.weixin.qq.com', 'httpOnly': False, 'name': 'wwrtx.vid', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': '1688857704485486'}, {'domain': '.work.weixin.qq.com', 'httpOnly': True, 'name': 'wwrtx.ref', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': 'direct'}, {'domain': '.work.weixin.qq.com', 'httpOnly': True, 'name': 'wwrtx.ltype', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': '1'}, {'domain': '.work.weixin.qq.com', 'httpOnly': False, 'name': 'wwrtx.d2st', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': 'a3796201'}, {'domain': '.work.weixin.qq.com', 'httpOnly': True, 'name': 'wwrtx.refid', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': '31271511472765660'}, {'domain': '.work.weixin.qq.com', 'expiry': 1694745998, 'httpOnly': False, 'name': 'wwrtx.i18n_lan', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': 'en'}, {'domain': '.work.weixin.qq.com', 'httpOnly': True, 'name': 'wwrtx.vst', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': '94upNyLjb-Ok0JQlZ7VaufRi-79JDF2Qx4z3goVqwKE3926LpN6Gd8j2bjPpfiLiSin0mJV_R5SUjYX1mX93jCzq7n0BrNtZVibXTeMuGtE4nIQ-hWKMTVQSS93DdLMDlJu8Lf-1C-bfcBQvIIgUhNfKLiILh-ikYoOzesoPO2gVS6iABcpnKoBmkpNfRibNNT9HTQhu6lrhUEpIzJuczYf3d_PzB5pZ7HV_byCOOwk2uLVG6gPoGhTuLb1ZwmJ-sj5dN1liyYnC-GHQ5aVvmg'}, {'domain': '.work.weixin.qq.com', 'httpOnly': True, 'name': 'wwrtx.sid', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': 'ma1VuDgaeF_sUZ0E17NPZABv_53SJHiX2oS09ErEqvh6CF2smwTW166PvAuH9SgX'}, {'domain': '.work.weixin.qq.com', 'expiry': 1723689965, 'httpOnly': False, 'name': 'wwrtx.c_gdpr', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': '0'}] 
+[2023-08-16 10:53:38] [INFO] [login_page.py]/[line: 40]/[login] 植入cookies 
+[2023-08-16 10:54:51] [INFO] [login_page.py]/[line: 26]/[login] cookies的结果 [{'domain': '.work.weixin.qq.com', 'httpOnly': True, 'name': 'wwrtx.logined', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': 'true'}, {'domain': '.work.weixin.qq.com', 'httpOnly': False, 'name': 'wwrtx.cs_ind', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': ''}, {'domain': '.work.weixin.qq.com', 'httpOnly': False, 'name': 'wxpay.vid', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': '1688857704485486'}, {'domain': '.work.weixin.qq.com', 'httpOnly': False, 'name': 'wxpay.corpid', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': '1970326617987674'}, {'domain': '.work.weixin.qq.com', 'httpOnly': False, 'name': 'wwrtx.vid', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': '1688857704485486'}, {'domain': '.work.weixin.qq.com', 'httpOnly': True, 'name': 'wwrtx.ref', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': 'direct'}, {'domain': '.work.weixin.qq.com', 'httpOnly': True, 'name': 'wwrtx.ltype', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': '1'}, {'domain': '.work.weixin.qq.com', 'httpOnly': False, 'name': 'wwrtx.d2st', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': 'a3796201'}, {'domain': '.work.weixin.qq.com', 'httpOnly': True, 'name': 'wwrtx.refid', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': '31271511472765660'}, {'domain': '.work.weixin.qq.com', 'expiry': 1694745998, 'httpOnly': False, 'name': 'wwrtx.i18n_lan', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': 'en'}, {'domain': '.work.weixin.qq.com', 'httpOnly': True, 'name': 'wwrtx.vst', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': '94upNyLjb-Ok0JQlZ7VaufRi-79JDF2Qx4z3goVqwKE3926LpN6Gd8j2bjPpfiLiSin0mJV_R5SUjYX1mX93jCzq7n0BrNtZVibXTeMuGtE4nIQ-hWKMTVQSS93DdLMDlJu8Lf-1C-bfcBQvIIgUhNfKLiILh-ikYoOzesoPO2gVS6iABcpnKoBmkpNfRibNNT9HTQhu6lrhUEpIzJuczYf3d_PzB5pZ7HV_byCOOwk2uLVG6gPoGhTuLb1ZwmJ-sj5dN1liyYnC-GHQ5aVvmg'}, {'domain': '.work.weixin.qq.com', 'httpOnly': True, 'name': 'wwrtx.sid', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': 'ma1VuDgaeF_sUZ0E17NPZABv_53SJHiX2oS09ErEqvh6CF2smwTW166PvAuH9SgX'}, {'domain': '.work.weixin.qq.com', 'expiry': 1723689965, 'httpOnly': False, 'name': 'wwrtx.c_gdpr', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': '0'}] 
+[2023-08-16 10:54:51] [INFO] [login_page.py]/[line: 40]/[login] 植入cookies 
+[2023-08-16 10:54:57] [INFO] [login_page.py]/[line: 26]/[login] cookies的结果 [{'domain': '.work.weixin.qq.com', 'httpOnly': True, 'name': 'wwrtx.logined', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': 'true'}, {'domain': '.work.weixin.qq.com', 'httpOnly': False, 'name': 'wwrtx.cs_ind', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': ''}, {'domain': '.work.weixin.qq.com', 'httpOnly': False, 'name': 'wxpay.vid', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': '1688857704485486'}, {'domain': '.work.weixin.qq.com', 'httpOnly': False, 'name': 'wxpay.corpid', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': '1970326617987674'}, {'domain': '.work.weixin.qq.com', 'httpOnly': False, 'name': 'wwrtx.vid', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': '1688857704485486'}, {'domain': '.work.weixin.qq.com', 'httpOnly': True, 'name': 'wwrtx.ref', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': 'direct'}, {'domain': '.work.weixin.qq.com', 'httpOnly': True, 'name': 'wwrtx.ltype', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': '1'}, {'domain': '.work.weixin.qq.com', 'httpOnly': False, 'name': 'wwrtx.d2st', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': 'a3796201'}, {'domain': '.work.weixin.qq.com', 'httpOnly': True, 'name': 'wwrtx.refid', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': '31271511472765660'}, {'domain': '.work.weixin.qq.com', 'expiry': 1694745998, 'httpOnly': False, 'name': 'wwrtx.i18n_lan', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': 'en'}, {'domain': '.work.weixin.qq.com', 'httpOnly': True, 'name': 'wwrtx.vst', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': '94upNyLjb-Ok0JQlZ7VaufRi-79JDF2Qx4z3goVqwKE3926LpN6Gd8j2bjPpfiLiSin0mJV_R5SUjYX1mX93jCzq7n0BrNtZVibXTeMuGtE4nIQ-hWKMTVQSS93DdLMDlJu8Lf-1C-bfcBQvIIgUhNfKLiILh-ikYoOzesoPO2gVS6iABcpnKoBmkpNfRibNNT9HTQhu6lrhUEpIzJuczYf3d_PzB5pZ7HV_byCOOwk2uLVG6gPoGhTuLb1ZwmJ-sj5dN1liyYnC-GHQ5aVvmg'}, {'domain': '.work.weixin.qq.com', 'httpOnly': True, 'name': 'wwrtx.sid', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': 'ma1VuDgaeF_sUZ0E17NPZABv_53SJHiX2oS09ErEqvh6CF2smwTW166PvAuH9SgX'}, {'domain': '.work.weixin.qq.com', 'expiry': 1723689965, 'httpOnly': False, 'name': 'wwrtx.c_gdpr', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': '0'}] 
+[2023-08-16 10:54:57] [INFO] [login_page.py]/[line: 40]/[login] 植入cookies 
+[2023-08-16 10:55:10] [INFO] [create_member_page.py]/[line: 33]/[create_member_save] 创建成员 - name:dasfjasf fdsfaf;acctid:test13@qq.com;phone:15650779713;email:test13@qq.com 
+[2023-08-16 10:55:15] [INFO] [member_list_page.py]/[line: 20]/[get_operate_results] 获取创建成员结果 
+[2023-08-16 10:55:27] [ERROR] [home_page.py]/[line: 37]/[go_to_member_list] 点击通讯录时报错: Message: element click intercepted: Element <a id="menu_contacts" href="#contacts" class="frame_nav_item">...</a> is not clickable at point (307, 52). Other element would receive the click: <div class="qui_mask ww_mask js_dialog_mask" style="height: 100%; width: 100%;"></div>
+  (Session info: chrome=115.0.5790.110)
+Stacktrace:
+#0 0x55a35a314783 <unknown>
+#1 0x55a35a040917 <unknown>
+#2 0x55a35a084ec2 <unknown>
+#3 0x55a35a083414 <unknown>
+#4 0x55a35a081338 <unknown>
+#5 0x55a35a08047d <unknown>
+#6 0x55a35a075599 <unknown>
+#7 0x55a35a09fe02 <unknown>
+#8 0x55a35a074fb6 <unknown>
+#9 0x55a35a09ffce <unknown>
+#10 0x55a35a0b80d9 <unknown>
+#11 0x55a35a09fbd3 <unknown>
+#12 0x55a35a073a7b <unknown>
+#13 0x55a35a07481e <unknown>
+#14 0x55a35a2d5e98 <unknown>
+#15 0x55a35a2d9d67 <unknown>
+#16 0x55a35a2e432c <unknown>
+#17 0x55a35a2da993 <unknown>
+#18 0x55a35a2a9827 <unknown>
+#19 0x55a35a2fe8a8 <unknown>
+#20 0x55a35a2fea36 <unknown>
+#21 0x55a35a30d5f3 <unknown>
+#22 0x7f3f4833f609 start_thread
+ 
+[2023-08-16 10:55:33] [INFO] [create_member_page.py]/[line: 52]/[create_member_save_and_continue] 创建成员 - name:test13;acctid:test13@qq.com;phone:15650779713;email:test13@qq.com 
+[2023-08-16 10:55:43] [INFO] [member_list_page.py]/[line: 20]/[get_operate_results] 获取创建成员结果 
+[2023-08-16 10:55:54] [ERROR] [home_page.py]/[line: 37]/[go_to_member_list] 点击通讯录时报错: Message: element click intercepted: Element <a id="menu_contacts" href="#contacts" class="frame_nav_item">...</a> is not clickable at point (307, 52). Other element would receive the click: <div class="qui_mask ww_mask js_dialog_mask" style="height: 100%; width: 100%;"></div>
+  (Session info: chrome=115.0.5790.110)
+Stacktrace:
+#0 0x55a35a314783 <unknown>
+#1 0x55a35a040917 <unknown>
+#2 0x55a35a084ec2 <unknown>
+#3 0x55a35a083414 <unknown>
+#4 0x55a35a081338 <unknown>
+#5 0x55a35a08047d <unknown>
+#6 0x55a35a075599 <unknown>
+#7 0x55a35a09fe02 <unknown>
+#8 0x55a35a074fb6 <unknown>
+#9 0x55a35a09ffce <unknown>
+#10 0x55a35a0b80d9 <unknown>
+#11 0x55a35a09fbd3 <unknown>
+#12 0x55a35a073a7b <unknown>
+#13 0x55a35a07481e <unknown>
+#14 0x55a35a2d5e98 <unknown>
+#15 0x55a35a2d9d67 <unknown>
+#16 0x55a35a2e432c <unknown>
+#17 0x55a35a2da993 <unknown>
+#18 0x55a35a2a9827 <unknown>
+#19 0x55a35a2fe8a8 <unknown>
+#20 0x55a35a2fea36 <unknown>
+#21 0x55a35a30d5f3 <unknown>
+#22 0x7f3f4833f609 start_thread
+ 
+[2023-08-16 10:55:59] [INFO] [home_page.py]/[line: 19]/[click_add_by_home] 从首页跳转到添加成员页面 
+[2023-08-16 10:55:59] [INFO] [create_member_page.py]/[line: 33]/[create_member_save] 创建成员 - name:111111111111111111111111111111111111111111111111111111111111111;acctid:test13@qq.com;phone:15650779713;email:test13@qq.com 
+[2023-08-16 10:56:04] [INFO] [member_list_page.py]/[line: 20]/[get_operate_results] 获取创建成员结果 
+[2023-08-16 10:56:27] [INFO] [login_page.py]/[line: 26]/[login] cookies的结果 [{'domain': '.work.weixin.qq.com', 'httpOnly': True, 'name': 'wwrtx.logined', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': 'true'}, {'domain': '.work.weixin.qq.com', 'httpOnly': False, 'name': 'wwrtx.cs_ind', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': ''}, {'domain': '.work.weixin.qq.com', 'httpOnly': False, 'name': 'wxpay.vid', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': '1688857704485486'}, {'domain': '.work.weixin.qq.com', 'httpOnly': False, 'name': 'wxpay.corpid', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': '1970326617987674'}, {'domain': '.work.weixin.qq.com', 'httpOnly': False, 'name': 'wwrtx.vid', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': '1688857704485486'}, {'domain': '.work.weixin.qq.com', 'httpOnly': True, 'name': 'wwrtx.ref', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': 'direct'}, {'domain': '.work.weixin.qq.com', 'httpOnly': True, 'name': 'wwrtx.ltype', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': '1'}, {'domain': '.work.weixin.qq.com', 'httpOnly': False, 'name': 'wwrtx.d2st', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': 'a3796201'}, {'domain': '.work.weixin.qq.com', 'httpOnly': True, 'name': 'wwrtx.refid', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': '31271511472765660'}, {'domain': '.work.weixin.qq.com', 'expiry': 1694745998, 'httpOnly': False, 'name': 'wwrtx.i18n_lan', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': 'en'}, {'domain': '.work.weixin.qq.com', 'httpOnly': True, 'name': 'wwrtx.vst', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': '94upNyLjb-Ok0JQlZ7VaufRi-79JDF2Qx4z3goVqwKE3926LpN6Gd8j2bjPpfiLiSin0mJV_R5SUjYX1mX93jCzq7n0BrNtZVibXTeMuGtE4nIQ-hWKMTVQSS93DdLMDlJu8Lf-1C-bfcBQvIIgUhNfKLiILh-ikYoOzesoPO2gVS6iABcpnKoBmkpNfRibNNT9HTQhu6lrhUEpIzJuczYf3d_PzB5pZ7HV_byCOOwk2uLVG6gPoGhTuLb1ZwmJ-sj5dN1liyYnC-GHQ5aVvmg'}, {'domain': '.work.weixin.qq.com', 'httpOnly': True, 'name': 'wwrtx.sid', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': 'ma1VuDgaeF_sUZ0E17NPZABv_53SJHiX2oS09ErEqvh6CF2smwTW166PvAuH9SgX'}, {'domain': '.work.weixin.qq.com', 'expiry': 1723689965, 'httpOnly': False, 'name': 'wwrtx.c_gdpr', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': '0'}] 
+[2023-08-16 10:56:27] [INFO] [login_page.py]/[line: 40]/[login] 植入cookies 
+[2023-08-16 10:56:27] [INFO] [login_page.py]/[line: 26]/[login] cookies的结果 [{'domain': '.work.weixin.qq.com', 'httpOnly': True, 'name': 'wwrtx.logined', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': 'true'}, {'domain': '.work.weixin.qq.com', 'httpOnly': False, 'name': 'wwrtx.cs_ind', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': ''}, {'domain': '.work.weixin.qq.com', 'httpOnly': False, 'name': 'wxpay.vid', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': '1688857704485486'}, {'domain': '.work.weixin.qq.com', 'httpOnly': False, 'name': 'wxpay.corpid', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': '1970326617987674'}, {'domain': '.work.weixin.qq.com', 'httpOnly': False, 'name': 'wwrtx.vid', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': '1688857704485486'}, {'domain': '.work.weixin.qq.com', 'httpOnly': True, 'name': 'wwrtx.ref', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': 'direct'}, {'domain': '.work.weixin.qq.com', 'httpOnly': True, 'name': 'wwrtx.ltype', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': '1'}, {'domain': '.work.weixin.qq.com', 'httpOnly': False, 'name': 'wwrtx.d2st', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': 'a3796201'}, {'domain': '.work.weixin.qq.com', 'httpOnly': True, 'name': 'wwrtx.refid', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': '31271511472765660'}, {'domain': '.work.weixin.qq.com', 'expiry': 1694745998, 'httpOnly': False, 'name': 'wwrtx.i18n_lan', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': 'en'}, {'domain': '.work.weixin.qq.com', 'httpOnly': True, 'name': 'wwrtx.vst', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': '94upNyLjb-Ok0JQlZ7VaufRi-79JDF2Qx4z3goVqwKE3926LpN6Gd8j2bjPpfiLiSin0mJV_R5SUjYX1mX93jCzq7n0BrNtZVibXTeMuGtE4nIQ-hWKMTVQSS93DdLMDlJu8Lf-1C-bfcBQvIIgUhNfKLiILh-ikYoOzesoPO2gVS6iABcpnKoBmkpNfRibNNT9HTQhu6lrhUEpIzJuczYf3d_PzB5pZ7HV_byCOOwk2uLVG6gPoGhTuLb1ZwmJ-sj5dN1liyYnC-GHQ5aVvmg'}, {'domain': '.work.weixin.qq.com', 'httpOnly': True, 'name': 'wwrtx.sid', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': 'ma1VuDgaeF_sUZ0E17NPZABv_53SJHiX2oS09ErEqvh6CF2smwTW166PvAuH9SgX'}, {'domain': '.work.weixin.qq.com', 'expiry': 1723689965, 'httpOnly': False, 'name': 'wwrtx.c_gdpr', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': '0'}] 
+[2023-08-16 10:56:27] [INFO] [login_page.py]/[line: 40]/[login] 植入cookies 
+[2023-08-16 10:57:46] [INFO] [home_page.py]/[line: 19]/[click_add_by_home] 从首页跳转到添加成员页面 
+[2023-08-16 10:57:46] [INFO] [create_member_page.py]/[line: 33]/[create_member_save] 创建成员 - name:111111111111111111111111111111111111111111111111111111111111111;acctid:test13@qq.com;phone:15650779713;email:test13@qq.com 
+[2023-08-16 10:57:47] [INFO] [create_member_page.py]/[line: 52]/[create_member_save_and_continue] 创建成员 - name:11;acctid:test13@qq.com;phone:15650779713;email:test13@qq.com 
+[2023-08-16 10:57:57] [INFO] [member_list_page.py]/[line: 20]/[get_operate_results] 获取创建成员结果 
+[2023-08-16 10:58:06] [INFO] [delete_member_page.py]/[line: 19]/[single_delete] 通讯录列表删除勾选成员 
+[2023-08-16 10:58:11] [INFO] [home_page.py]/[line: 19]/[click_add_by_home] 从首页跳转到添加成员页面 
+[2023-08-16 10:58:11] [INFO] [create_member_page.py]/[line: 33]/[create_member_save] 创建成员 - name:#@￥%……&;acctid:test13@qq.com;phone:15650779713;email:test13@qq.com 
+[2023-08-16 10:58:16] [INFO] [create_member_page.py]/[line: 52]/[create_member_save_and_continue] 创建成员 - name:#@￥%……&;acctid:test13@qq.com;phone:15650779713;email:test13@qq.com 
+[2023-08-16 10:58:27] [INFO] [login_page.py]/[line: 26]/[login] cookies的结果 [{'domain': '.work.weixin.qq.com', 'httpOnly': True, 'name': 'wwrtx.logined', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': 'true'}, {'domain': '.work.weixin.qq.com', 'httpOnly': False, 'name': 'wwrtx.cs_ind', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': ''}, {'domain': '.work.weixin.qq.com', 'httpOnly': False, 'name': 'wxpay.vid', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': '1688857704485486'}, {'domain': '.work.weixin.qq.com', 'httpOnly': False, 'name': 'wxpay.corpid', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': '1970326617987674'}, {'domain': '.work.weixin.qq.com', 'httpOnly': False, 'name': 'wwrtx.vid', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': '1688857704485486'}, {'domain': '.work.weixin.qq.com', 'httpOnly': True, 'name': 'wwrtx.ref', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': 'direct'}, {'domain': '.work.weixin.qq.com', 'httpOnly': True, 'name': 'wwrtx.ltype', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': '1'}, {'domain': '.work.weixin.qq.com', 'httpOnly': False, 'name': 'wwrtx.d2st', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': 'a3796201'}, {'domain': '.work.weixin.qq.com', 'httpOnly': True, 'name': 'wwrtx.refid', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': '31271511472765660'}, {'domain': '.work.weixin.qq.com', 'expiry': 1694745998, 'httpOnly': False, 'name': 'wwrtx.i18n_lan', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': 'en'}, {'domain': '.work.weixin.qq.com', 'httpOnly': True, 'name': 'wwrtx.vst', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': '94upNyLjb-Ok0JQlZ7VaufRi-79JDF2Qx4z3goVqwKE3926LpN6Gd8j2bjPpfiLiSin0mJV_R5SUjYX1mX93jCzq7n0BrNtZVibXTeMuGtE4nIQ-hWKMTVQSS93DdLMDlJu8Lf-1C-bfcBQvIIgUhNfKLiILh-ikYoOzesoPO2gVS6iABcpnKoBmkpNfRibNNT9HTQhu6lrhUEpIzJuczYf3d_PzB5pZ7HV_byCOOwk2uLVG6gPoGhTuLb1ZwmJ-sj5dN1liyYnC-GHQ5aVvmg'}, {'domain': '.work.weixin.qq.com', 'httpOnly': True, 'name': 'wwrtx.sid', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': 'ma1VuDgaeF_sUZ0E17NPZABv_53SJHiX2oS09ErEqvh6CF2smwTW166PvAuH9SgX'}, {'domain': '.work.weixin.qq.com', 'expiry': 1723689965, 'httpOnly': False, 'name': 'wwrtx.c_gdpr', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': '0'}] 
+[2023-08-16 10:58:27] [INFO] [login_page.py]/[line: 40]/[login] 植入cookies 
+[2023-08-16 10:58:27] [INFO] [login_page.py]/[line: 26]/[login] cookies的结果 [{'domain': '.work.weixin.qq.com', 'httpOnly': True, 'name': 'wwrtx.logined', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': 'true'}, {'domain': '.work.weixin.qq.com', 'httpOnly': False, 'name': 'wwrtx.cs_ind', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': ''}, {'domain': '.work.weixin.qq.com', 'httpOnly': False, 'name': 'wxpay.vid', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': '1688857704485486'}, {'domain': '.work.weixin.qq.com', 'httpOnly': False, 'name': 'wxpay.corpid', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': '1970326617987674'}, {'domain': '.work.weixin.qq.com', 'httpOnly': False, 'name': 'wwrtx.vid', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': '1688857704485486'}, {'domain': '.work.weixin.qq.com', 'httpOnly': True, 'name': 'wwrtx.ref', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': 'direct'}, {'domain': '.work.weixin.qq.com', 'httpOnly': True, 'name': 'wwrtx.ltype', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': '1'}, {'domain': '.work.weixin.qq.com', 'httpOnly': False, 'name': 'wwrtx.d2st', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': 'a3796201'}, {'domain': '.work.weixin.qq.com', 'httpOnly': True, 'name': 'wwrtx.refid', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': '31271511472765660'}, {'domain': '.work.weixin.qq.com', 'expiry': 1694745998, 'httpOnly': False, 'name': 'wwrtx.i18n_lan', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': 'en'}, {'domain': '.work.weixin.qq.com', 'httpOnly': True, 'name': 'wwrtx.vst', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': '94upNyLjb-Ok0JQlZ7VaufRi-79JDF2Qx4z3goVqwKE3926LpN6Gd8j2bjPpfiLiSin0mJV_R5SUjYX1mX93jCzq7n0BrNtZVibXTeMuGtE4nIQ-hWKMTVQSS93DdLMDlJu8Lf-1C-bfcBQvIIgUhNfKLiILh-ikYoOzesoPO2gVS6iABcpnKoBmkpNfRibNNT9HTQhu6lrhUEpIzJuczYf3d_PzB5pZ7HV_byCOOwk2uLVG6gPoGhTuLb1ZwmJ-sj5dN1liyYnC-GHQ5aVvmg'}, {'domain': '.work.weixin.qq.com', 'httpOnly': True, 'name': 'wwrtx.sid', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': 'ma1VuDgaeF_sUZ0E17NPZABv_53SJHiX2oS09ErEqvh6CF2smwTW166PvAuH9SgX'}, {'domain': '.work.weixin.qq.com', 'expiry': 1723689965, 'httpOnly': False, 'name': 'wwrtx.c_gdpr', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': '0'}] 
+[2023-08-16 10:58:27] [INFO] [login_page.py]/[line: 40]/[login] 植入cookies 
+[2023-08-16 10:58:41] [INFO] [create_member_page.py]/[line: 33]/[create_member_save] 创建成员 - name:dasfjasf fdsfaf;acctid:test13@qq.com;phone:15650779713;email:test13@qq.com 
+[2023-08-16 10:58:46] [INFO] [member_list_page.py]/[line: 20]/[get_operate_results] 获取创建成员结果 
+[2023-08-16 10:58:59] [INFO] [create_member_page.py]/[line: 33]/[create_member_save] 创建成员 - name:test;acctid:test13@qq.com;phone:12345678901;email:test13@qq.com 
+[2023-08-16 10:59:04] [INFO] [member_list_page.py]/[line: 20]/[get_operate_results] 获取创建成员结果 
+[2023-08-16 10:59:13] [INFO] [delete_member_page.py]/[line: 19]/[single_delete] 通讯录列表删除勾选成员 
+[2023-08-16 10:59:22] [INFO] [create_member_page.py]/[line: 52]/[create_member_save_and_continue] 创建成员 - name:test13;acctid:test13@qq.com;phone:15650779713;email:test13@qq.com 
+[2023-08-16 10:59:32] [INFO] [member_list_page.py]/[line: 20]/[get_operate_results] 获取创建成员结果 
+[2023-08-16 10:59:41] [INFO] [delete_member_page.py]/[line: 19]/[single_delete] 通讯录列表删除勾选成员 
+[2023-08-16 10:59:50] [INFO] [create_member_page.py]/[line: 52]/[create_member_save_and_continue] 创建成员 - name:111111111111111111111111111111111111111111111111111111111111111;acctid:test13@qq.com;phone:15650779713;email:test13@qq.com 
+[2023-08-16 11:00:00] [INFO] [member_list_page.py]/[line: 20]/[get_operate_results] 获取创建成员结果 
+[2023-08-16 11:00:08] [INFO] [delete_member_page.py]/[line: 19]/[single_delete] 通讯录列表删除勾选成员 
+[2023-08-16 11:00:15] [INFO] [home_page.py]/[line: 19]/[click_add_by_home] 从首页跳转到添加成员页面 
+[2023-08-16 11:00:15] [INFO] [create_member_page.py]/[line: 33]/[create_member_save] 创建成员 - name:111111111111111111111111111111111111111111111111111111111111111;acctid:test13@qq.com;phone:15650779713;email:test13@qq.com 
+[2023-08-16 11:00:20] [INFO] [member_list_page.py]/[line: 20]/[get_operate_results] 获取创建成员结果 
+[2023-08-16 11:00:29] [INFO] [delete_member_page.py]/[line: 19]/[single_delete] 通讯录列表删除勾选成员 
+[2023-08-16 11:00:35] [INFO] [home_page.py]/[line: 19]/[click_add_by_home] 从首页跳转到添加成员页面 
+[2023-08-16 11:00:35] [INFO] [create_member_page.py]/[line: 33]/[create_member_save] 创建成员 - name:11;acctid:test13@qq.com;phone:15650779713;email:test13@qq.com 
+[2023-08-16 11:00:40] [INFO] [member_list_page.py]/[line: 20]/[get_operate_results] 获取创建成员结果 
+[2023-08-16 11:00:49] [INFO] [home_page.py]/[line: 19]/[click_add_by_home] 从首页跳转到添加成员页面 
+[2023-08-16 11:00:49] [INFO] [create_member_page.py]/[line: 33]/[create_member_save] 创建成员 - name:test13;acctid:test13@qq.com;phone:15650779713;email:test13@qq.com 
+[2023-08-16 11:00:49] [INFO] [delete_member_page.py]/[line: 19]/[single_delete] 通讯录列表删除勾选成员 
+[2023-08-16 11:00:56] [INFO] [home_page.py]/[line: 19]/[click_add_by_home] 从首页跳转到添加成员页面 
+[2023-08-16 11:00:56] [INFO] [create_member_page.py]/[line: 33]/[create_member_save] 创建成员 - name:#@￥%……&;acctid:test13@qq.com;phone:15650779713;email:test13@qq.com 
+[2023-08-16 11:01:01] [INFO] [home_page.py]/[line: 19]/[click_add_by_home] 从首页跳转到添加成员页面 
+[2023-08-16 11:01:01] [INFO] [create_member_page.py]/[line: 33]/[create_member_save] 创建成员 - name:test;acctid:test13@qq.com;phone:12345678901;email:test13@qq.com 
+[2023-08-16 11:01:02] [INFO] [member_list_page.py]/[line: 20]/[get_operate_results] 获取创建成员结果 
+[2023-08-16 11:01:07] [INFO] [member_list_page.py]/[line: 20]/[get_operate_results] 获取创建成员结果 
+[2023-08-16 11:01:11] [INFO] [delete_member_page.py]/[line: 19]/[single_delete] 通讯录列表删除勾选成员 
+[2023-08-16 11:01:18] [INFO] [home_page.py]/[line: 19]/[click_add_by_home] 从首页跳转到添加成员页面 
+[2023-08-16 11:01:18] [INFO] [create_member_page.py]/[line: 33]/[create_member_save] 创建成员 - name:dasfjasf fdsfaf;acctid:test13@qq.com;phone:15650779713;email:test13@qq.com 
+[2023-08-16 11:01:23] [INFO] [member_list_page.py]/[line: 20]/[get_operate_results] 获取创建成员结果 
+[2023-08-16 11:01:32] [INFO] [delete_member_page.py]/[line: 19]/[single_delete] 通讯录列表删除勾选成员 
+[2023-08-16 11:01:39] [INFO] [home_page.py]/[line: 19]/[click_add_by_home] 从首页跳转到添加成员页面 
+[2023-08-16 11:01:39] [INFO] [create_member_page.py]/[line: 52]/[create_member_save_and_continue] 创建成员 - name:11;acctid:test13@qq.com;phone:15650779713;email:test13@qq.com 
+[2023-08-16 11:01:49] [INFO] [member_list_page.py]/[line: 20]/[get_operate_results] 获取创建成员结果 
+[2023-08-16 11:01:50] [INFO] [home_page.py]/[line: 19]/[click_add_by_home] 从首页跳转到添加成员页面 
+[2023-08-16 11:01:50] [INFO] [create_member_page.py]/[line: 52]/[create_member_save_and_continue] 创建成员 - name:dasfjasf fdsfaf;acctid:test13@qq.com;phone:15650779713;email:test13@qq.com 
+[2023-08-16 11:01:54] [INFO] [home_page.py]/[line: 19]/[click_add_by_home] 从首页跳转到添加成员页面 
+[2023-08-16 11:01:54] [INFO] [create_member_page.py]/[line: 52]/[create_member_save_and_continue] 创建成员 - name:#@￥%……&;acctid:test13@qq.com;phone:15650779713;email:test13@qq.com 
