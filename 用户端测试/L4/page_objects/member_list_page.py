@@ -3,8 +3,6 @@ import allure
 from selenium.webdriver.common.by import By
 from 用户端测试.L4.page_objects.base_page import BasePage
 from 用户端测试.utils.log_util import logger
-
-
 class MemberListPage(BasePage):
     _ADD_MEMBER = (By.XPATH, '//*[@class="ww_operationBar"]//*[text()="添加成员"]')
     _MEMBER_LIST = (By.XPATH, '//*[@id="member_list"]/tr//td[2]')

@@ -1,9 +1,6 @@
 import os
 import time
 from datetime import datetime
-
-import selenium
-from selene import browser, config
 import allure
 import yaml
 from selenium import webdriver
@@ -18,55 +15,19 @@ class BasePage:
         if driver:
             self.driver = driver
         else:
-            config.browser_name = 'chrome'
-            # 配置使用的基础url
-            config.base_url = "https://work.weixin.qq.com"
-            # 配置超时时间
-            config.timeout = 10
-            # 测试失败时不保存截图
-            config.save_screenshot_on_failure = False
+            caps = {
+                'browserName': "chrome"
+            }
+            driver = webdriver.Remote(
+                command_executor='http://43.138.100.186:5444',
+                desired_capabilities=caps
+            )
+            # 设置隐式等待
+            driver.implicitly_wait(3)
+            # 设置最大窗口
+            driver.maximize_window()
 
-            # 浏览器选项设置
-            option = selenium.webdriver.ChromeOptions()
-            # 添加一系列Chrome命令行参数,用于配置浏览器行为
-            option.add_argument("--disable-infobars")
-            option.add_argument("--disable-dev-shm-usage")
-            option.add_argument("--no-sandbox")
-            option.add_argument("--disable-extensions")
-            option.add_argument("--ignore-ssl-errors")
-            option.add_argument("--ignore-certificate-errors")
-            option.add_argument('--disable-gpu')
-
-            # 添加实验性选项
-            prefs = {'download.default_directory': '/home/seluser/Downloads/'}
-            # 设置下载目录
-            option.add_experimental_option('prefs', prefs)
-            # 禁用W3C标准
-            # option.add_experimental_option('w3c', False)
-
-            option.add_experimental_option('perfLoggingPrefs', {
-                'enableNetwork': True,
-                'enablePage': False,
-            })
-            # 将chrome选项转换为Selenium的Capabilities对象,用于启动Remote WebDriver
-            caps = option.to_capabilities()
-            caps['goog:loggingPrefs'] = {'performance': 'ALL'}
-            # 创建和配置WebDriver
-            # 使用Remote WebDriver 连接到远程的Selenium Grid节点,执行测试
-            config.driver = selenium.webdriver.Remote(
-                command_executor="http://43.138.100.186:5444",
-                desired_capabilities=caps,
-                keep_alive=True,
-                options=option)
-            # 设置页面加载超时时间为10s
-            config.driver.set_page_load_timeout(10)
-            self.driver = browser.open_url('/wework_admin/frame#index')
-
-            # # self.driver = webdriver.Chrome()
-            # # # 设置隐式等待
-            # self.driver.implicitly_wait(3)
-            # # 设置最大窗口
-            # self.driver.maximize_window()
+            self.driver = driver
 
     def do_find(self, by, locator=None):
         """获取单个元素"""

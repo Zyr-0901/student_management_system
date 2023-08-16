@@ -1,7 +1,6 @@
 import os
 import time
 from datetime import datetime
-
 import allure
 import yaml
 from selenium import webdriver
