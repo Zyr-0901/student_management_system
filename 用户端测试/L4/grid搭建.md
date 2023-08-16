@@ -1,3 +1,6 @@
+# 目录结构
+![img_21.png](images/img_21.png)
+
 # 目的
 提供一种在多态机器上并行运行测试的简单方法</br>
 允许在不同的浏览器版本上进行测试</br>
@@ -29,7 +32,7 @@ Node 可以配置为支持不同的浏览器和操作系统，使你可以在不
 ### 分布式部署
 每个组件都需要单独部署,单独启动,理想情况下应该位于不同的机器上
 ## 组件
-![img_7.png](img_7.png)
+![img_7.png](images/img_7.png)
 ### Router
 路由器是Grid的入口点,接收所有外部请求,并将他们转发给正确的组件</br>
 如果是新的请求,则转发到Session Queue</br>
@@ -104,7 +107,7 @@ sudo docker run --name node-firefox -p 5903:5900 -d -e SE_EVENT_BUS_HOST=43.138.
 ```
 ### 验证
 如果出现如下页面,表示部署完成</br>
-![img_8.png](img_8.png)
+![img_8.png](images/img_8.png)
 ### 远程访问Node
 下载软件 [Vnc Viewer](https://www.realvnc.com/en/connect/download/viewer/linux/)
 #### linux
@@ -122,12 +125,12 @@ sudo apt install tigervnc-viewer #是vncviewer另一个常用的包
 #### mac
 [免费版下载](https://m.pc6.com/s/561489)</br>
 安装成功后页面如下</br>
-![img_9.png](img_9.png)
+![img_9.png](images/img_9.png)
 无需登录,在以下页面输入节点的ip+端口进行链接</br>
 填写密码,默认secret</br>
-![img_10.png](img_10.png)
+![img_10.png](images/img_10.png)
 输入密码后显示</br>
-![img_11.png](img_11.png)
+![img_11.png](images/img_11.png)
 ### 问题
 #### 为什么需要一个端口区间?
 如: 5442-5444:4442-4444</br>
@@ -190,13 +193,13 @@ def test_open_baidu(driver):
     time.sleep(20) # 为了看页面结果,让其强制等待会
 ```
 ### 查看grid hub 页面
-![img_12.png](img_12.png)
+![img_12.png](images/img_12.png)
 sessions(会话): 表示当期那正在运行的测试会话数量,也就是正在执行的测试任务实例数;每个会话通常对应一个独立的浏览器实例,在这个浏览器实例中运行测试</br>
 Max.Concurrency: 指的是Selenium Grid允许最大并发会话数,也就是同一时间内可以同时运行的测试会话的最大数量</br>
 
 ### 查看node节点实际运行情况
 使用vnc viewer工具打开节点**</br>
-![img_13.png](img_13.png)
+![img_13.png](images/img_13.png)
 ## 多会话运行
 ### 流程
 #### 安装插件
@@ -247,15 +250,15 @@ def test_open_baidu(driver):
     time.sleep(20)
 ```
 #### 执行代码
-![img_14.png](img_14.png)
+![img_14.png](images/img_14.png)
 在当前终端执行如下命令, -n 2表示开启2个会话</br>
-![img_15.png](img_15.png)
+![img_15.png](images/img_15.png)
  在test_case文件下写了2个测试模块,每个模块是一个独立的浏览器实例,所以当我们指定3时,还是只有2个worker </br>
-![img_16.png](img_16.png)
+![img_16.png](images/img_16.png)
 #### 查看grid hub
-![img_17.png](img_17.png)
+![img_17.png](images/img_17.png)
 #### 查看node节点执行情况
-![img_18.png](img_18.png)
+![img_18.png](images/img_18.png)
 ### 注意事项
 1.一个浏览器实例会开一个会话</br>
 2.测试数据隔离(不能出现重复的,比如2个测试用例用同一个手机号,但是手机号不允许重复,就会报错)</br>
