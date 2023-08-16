@@ -1,0 +1,2 @@
+[2023-08-16 15:18:56] [INFO] [home_page.py]/[line: 19]/[click_add_by_home] 从首页跳转到添加成员页面 
+[2023-08-16 15:18:56] [INFO] [create_member_page.py]/[line: 67]/[create_member_invalid_username] 创建成员姓名无效 - name:;acctid:test19@qq.com;phone:15650779719;email:test19@qq.com 

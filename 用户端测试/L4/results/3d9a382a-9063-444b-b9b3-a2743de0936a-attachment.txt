@@ -1,0 +1,3 @@
+INFO     用户端测试.utils.log_util:create_member_page.py:52 创建成员 - name:#@￥%……&;acctid:test16@qq.com;phone:15650779716;email:test16@qq.com
+INFO     用户端测试.utils.log_util:member_list_page.py:20 获取创建成员结果
+INFO     用户端测试.utils.log_util:delete_member_page.py:19 通讯录列表删除勾选成员

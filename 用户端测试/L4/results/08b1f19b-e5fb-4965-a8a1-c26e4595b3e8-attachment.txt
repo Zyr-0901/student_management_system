@@ -1,0 +1,2 @@
+INFO     用户端测试.utils.log_util:home_page.py:19 从首页跳转到添加成员页面
+INFO     用户端测试.utils.log_util:create_member_page.py:78 创建成员账号无效 - name:test;acctid:!#$%^;phone:15650779723;email:test23@qq.com

@@ -1,0 +1,2 @@
+INFO     用户端测试.utils.log_util:home_page.py:19 从首页跳转到添加成员页面
+INFO     用户端测试.utils.log_util:create_member_page.py:67 创建成员姓名无效 - name:111111111111111111111111111111111111111111111111111111111111111111111111111111111111111;acctid:test20@qq.com;phone:15650779220;email:test20@qq.com

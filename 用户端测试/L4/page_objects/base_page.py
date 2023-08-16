@@ -8,20 +8,26 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.chrome.options import Options
+from 用户端测试.L4.conftest import web_env
 
 
 class BasePage:
     _INDEX_URL = "https://work.weixin.qq.com/wework_admin/frame#index"
 
     def __init__(self, driver=None):
+        browser = web_env.get("browser")
         if driver:
             self.driver = driver
         else:
             caps = {
-                'browserName': "chrome"
+                'browserName': "chrome",
             }
+            if browser == "firefox":
+                caps['browserName'] = "firefox"
             options = Options()
+            # 将浏览器设置为中文
             options.add_argument("--lang=zh-CN")
+            # 连接selenium grid
             driver = webdriver.Remote(
                 command_executor='http://43.138.100.186:5444',
                 desired_capabilities=caps,

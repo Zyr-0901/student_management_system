@@ -1,0 +1,3 @@
+[2023-08-16 15:17:08] [INFO] [home_page.py]/[line: 19]/[click_add_by_home] 从首页跳转到添加成员页面 
+[2023-08-16 15:17:08] [INFO] [create_member_page.py]/[line: 33]/[create_member_save] 创建成员 - name:dasfjasf fdsfaf;acctid:test17@qq.com;phone:15650779717;email:test17@qq.com 
+[2023-08-16 15:17:13] [INFO] [member_list_page.py]/[line: 20]/[get_operate_results] 获取创建成员结果 
