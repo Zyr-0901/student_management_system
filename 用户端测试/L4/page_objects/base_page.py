@@ -4,8 +4,10 @@ from datetime import datetime
 import allure
 import yaml
 from selenium import webdriver
+from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.chrome.options import Options
 
 
 class BasePage:
@@ -18,9 +20,12 @@ class BasePage:
             caps = {
                 'browserName': "chrome"
             }
+            options = Options()
+            options.add_argument("--lang=zh-CN")
             driver = webdriver.Remote(
                 command_executor='http://43.138.100.186:5444',
-                desired_capabilities=caps
+                desired_capabilities=caps,
+                options=options
             )
             # 设置隐式等待
             driver.implicitly_wait(3)
@@ -115,3 +120,11 @@ class BasePage:
 
     def quit_driver(self):
         self.driver.quit()
+
+    def switch_language(self):
+        self.driver.get('chrome://settings/')
+        self.do_find((By.ID, 'languages')).click()
+        self.do_find((By.ID, 'addLanguages')).click()
+        self.do_find((By.XPATH, '//*[@aria-label="Add Chinese"]')).click()
+
+
