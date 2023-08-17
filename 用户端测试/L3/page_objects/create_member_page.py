@@ -19,9 +19,9 @@ class CreateMemberPage(BasePage):
     _INDEX_URL = "https://work.weixin.qq.com/wework_admin/frame#index"
 
     def back_home(self):
-        time.sleep(1)
+        time.implicitly_wait(1)
         self.driver.get(self._INDEX_URL)
-        time.sleep(2)
+        time.implicitly_wait(2)
         self.wait_element_until_click((By.XPATH, '//*[text()="离开此页"]')).click()
 
     def create_member_save(self, username, acctid, phone, email):
@@ -38,7 +38,7 @@ class CreateMemberPage(BasePage):
             self.do_send_keys(phone, self._PHONE)
             self.do_send_keys(email, self._EMAIL)
             self.do_find(self._SAVE_BUT).click()
-            time.sleep(3)
+            time.implicitly_wait(3)
             self.save_key_screenshots(f"创建成员{username}")
             self.save_key_pagesource(f"创建成员{username}")
             from 用户端测试.L3.page_objects.member_list_page import MemberListPage
@@ -57,7 +57,7 @@ class CreateMemberPage(BasePage):
             self.do_send_keys(phone, self._PHONE)
             self.do_send_keys(email, self._EMAIL)
             self.do_find(self._SAVE_BUT_AND_ADD).click()
-            time.sleep(3)
+            time.implicitly_wait(3)
             self.save_key_screenshots(f"创建成员{username}")
             self.save_key_pagesource(f"创建成员{username}")
             from 用户端测试.L3.page_objects.home_page import HomePage
