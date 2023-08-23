@@ -36,14 +36,14 @@ class LoginPage(BasePage):
                 with open(cookie_path, 'w') as f:
                     yaml.safe_dump(cookies, f)
                 # 保存cookie需要足够的时间，否则会保存不完整，导致无法复用
-                time.implicitly_wait(5)
+                self.driver.implicitly_wait(5)
             # 植入cookie
             logger.info("植入cookies")
             for c in cookies:
                 self.driver.add_cookie(c)
             # 植入cookie需要足够的时间，否则会出现植入不完整情况
 
-            time.implicitly_wait(5)
+            self.driver.implicitly_wait(5)
             # 打开首页确认cookie是否植入成功
             self.driver.get(self._INDEX_URL)
             # 进入首页

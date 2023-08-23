@@ -52,6 +52,6 @@ class MemberListPage(BasePage):
             self.wait_element_until_click((By.XPATH, x_path)).click()
             self.save_key_screenshots(f"删除成员{username}")
             # 给截图一些时间
-            time.implicitly_wait(3)
+            self.driver.implicitly_wait(3)
             from 用户端测试.L3.page_objects.delete_member_page import DeleteMemberPage
             return DeleteMemberPage(self.driver)

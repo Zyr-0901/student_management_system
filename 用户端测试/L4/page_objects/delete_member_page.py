@@ -18,8 +18,8 @@ class DeleteMemberPage(BasePage):
         with allure.step("删除勾选的成员"):
             logger.info("通讯录列表删除勾选成员")
             self.wait_element_until_click(self._BUT_DELETE).click()
-            time.implicitly_wait(1)
+            self.driver.implicitly_wait(1)
             self.wait_element_until_click(self._CONFIRM_DELETE).click()
-            time.implicitly_wait(2)
+            self.driver.implicitly_wait(2)
             from 用户端测试.L4.page_objects.member_list_page import MemberListPage
             return MemberListPage(self.driver)

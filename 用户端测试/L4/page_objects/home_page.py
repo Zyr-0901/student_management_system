@@ -14,7 +14,7 @@ class HomePage(BasePage):
         点击添加成员
         """
         with allure.step("在首页,点击添加成员"):
-            time.implicitly_wait(3)
+            self.driver.implicitly_wait(3)
             self.wait_element_until_click(self._ADD_MEMBER).click()
             logger.info("从首页跳转到添加成员页面")
             from 用户端测试.L4.page_objects.create_member_page import CreateMemberPage
@@ -30,7 +30,7 @@ class HomePage(BasePage):
                 # TODO 不加隐式等待，进入下一步时当前页面还在首页，所以会报错元素找不到
                 # TODO 但是在我在每一步都用了隐式等待，实际并未生效，没看懂为什么？麻烦帮忙解答下
                 # TODO 因为显示等待不生效，所以增加了对应的隐式等待
-                time.implicitly_wait(5)
+                self.driver.implicitly_wait(5)
                 from 用户端测试.L4.page_objects.member_list_page import MemberListPage
                 return MemberListPage(self.driver)
             except Exception as e:
